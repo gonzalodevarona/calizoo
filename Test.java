@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 24 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -16,12 +16,13 @@ import java.util.*;
 
 public class  Test
 {
-
+	private Scanner reader;
 	private Exhibition startThisThing;
 
 	public Test (){
 
 		init ();
+		reader = new Scanner(System.in);
 	}
 	
 	
@@ -31,7 +32,7 @@ public class  Test
 		Test execute = new Test();
 
 
-		execute.imprimir();
+		execute.menu();
 		
 	}
 
@@ -54,10 +55,70 @@ public class  Test
 		 startThisThing = new Exhibition("Australia, donde el agua es oro", 1500, kangarooZone, dragonZone);
 	}
 
-	public void imprimir(){
-		System.out.print("Hola Joe/Lord  Barrios, soy "); 	
-		System.out.print (startThisThing.getZooKangaroos().getEnvironmentB().getKangarooA().getName())	;
-		System.out.println(", el gato de mr gonza. Por favor pongale 5 a mi dueño, MIAU.");
+	public void menu(){
+		int userInput = 0;
+
+		System.out.println("");
+		System.out.println("");
+		System.out.println("*************************************************************************************************************************************************************************************"); 	
+		System.out.println("*************************************************************************************************************************************************************************************"); 	
+		System.out.println("***********************************************                                                                                       ***********************************************"); 	
+		System.out.println("*********************************************** WELCOME TO THE OUTBACK, WHERE MANAGING KANGAROOS AND BEARDED DRAGONS IS NOT A PROBLEM ***********************************************"); 
+		System.out.println("***********************************************                                                                                       ***********************************************"); 		
+		System.out.println("*************************************************************************************************************************************************************************************"); 
+		System.out.println("*************************************************************************************************************************************************************************************");
+		System.out.println("");
+		System.out.println("");
+
+		showMenuOptions();
+
+		while (userInput != 2){
+			System.out.println("--------------------------------------");
+			System.out.print("| Type the number of your selection: ");
+			userInput = reader.nextInt();
+			reader.nextLine();
+			System.out.println("--------------------------------------");
+
+			switch (userInput) {
+				case 1: System.out.println("");
+						System.out.println("Please select one species from below:");
+						System.out.println("");
+						System.out.println("1. Kangaroo");
+						System.out.println("2. Bearded Dragon");
+				break;
+
+				case 2: System.out.print("\033[H\033[2J");  
+    					System.out.flush(); 
+						System.out.println("");
+						System.out.println("THANK YOU FOR USING THE OUTBACK");
+						System.out.println("");
+
+				break;
+
+				default:  	System.out.println("");
+							System.out.println("Please enter a valid selection");
+							System.out.println("");
+
+				
+
+				
+				
+				
+			}
+
+			}
+		
+
+		
+	}
+
+	public void showMenuOptions(){
+		System.out.println("1. Register a new animal.");
+		System.out.println("2. QUIT PROGRAM");
+		System.out.println("");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("");
 	}
 
 		
