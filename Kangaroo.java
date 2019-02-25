@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 24 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -181,6 +181,7 @@ public final static String HEMBRA = "Female";
 
 	public String calculateHeartLevel() {
 
+	if (needsShot == false) {
 		if (getBmi() < 18.0) {
 
 			switch (bloodType) {
@@ -199,7 +200,7 @@ public final static String HEMBRA = "Female";
 				heartLevel = ALTO;
 			} else { heartLevel = MODERADO;}
 		}
-
+	}
 
 		return heartLevel;
 		}
