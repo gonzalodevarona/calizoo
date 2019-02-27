@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 24 FEBRUARY 2019
+ * @LAST UPDATE DATE: 27 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -113,15 +113,77 @@ public class KEnvironment
 	}
 
 
-	/*public void keepMalesSafe(){
-		if(kangarooA.getGender() == Kangaroo.MALE){
-			if (kangarooB  == Kangaroo.MALE){
-				kangarooB.setGender(null);
-				System.out.println("No pueden haber dos canguros machos en un ambiente, digite de nuevo el sexo");
+	public void updateEnvironment(){
+		calculateTotalFood();
+		calculateWater();
+		calculateArea();
+	}
+
+		public void deleteKangaroo(boolean choise){
+			
+			int pickKangaroo = 0;
+			if (choise == true){
+			
+				switch (pickKangaroo){
+
+					case 1: setKangarooA(null);
+						updateEnvironment();
+						System.out.println("Deleated Kangaroo #1 from the environment."  );
+						
+						break;
+
+					case 2: setKangarooB(null);
+						updateEnvironment();
+						System.out.println("Deleated Kangaroo #2 from the environment."  );
+
+						break;
+
+					case 3: setKangarooC(null);
+						updateEnvironment();
+						System.out.println("Deleated Kangaroo #3 from the environment." );
+
+						break;
+
+					default: System.out.println("Pick a valid kangaroo");
+						break;
+
+
+				}
 			}
+
+	} 
+
+	public boolean oneMaleKangaroo(){
+		boolean oneMaleKangaroo = false;
+
+		if ((kangarooA.getGender()  == Kangaroo.MACHO) || (kangarooB.getGender()  == Kangaroo.MACHO)){
+			oneMaleKangaroo = true; }
+			
+			else if (kangarooC != null && kangarooA.getGender() == Kangaroo.MACHO){
+				oneMaleKangaroo = true;
+				}
+
+		return oneMaleKangaroo;
+		}
+		
+	public boolean checkIfEnvironmentIsFull() {
+
+		boolean full = false;
+		if (kangarooA != null && kangarooB != null && kangarooC != null){
+			full = true;
 		}
 
-	} */
+		return full;
+	}
+
+	
+	
 
 
-}
+
+
+} 
+	
+	
+
+
