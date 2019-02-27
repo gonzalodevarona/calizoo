@@ -5,11 +5,12 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 24 FEBRUARY 2019
+ * @LAST UPDATE DATE: 27 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
 package model;
+
 
 public class Kangaroo
 {
@@ -36,6 +37,8 @@ public final static String HEMBRA = "Female";
 	private String heartLevel;
 	private boolean needsShot;
 	private double food;
+	
+		
 
 //Relationships
 	private BDate birthDateK;
@@ -43,17 +46,19 @@ public final static String HEMBRA = "Female";
 
 //Methods
 	
-	public Kangaroo (String name, double weight, double height, String gender, String bloodType, double bmi, String heartLevel, BDate birthDateK, boolean needsShot, double food) {
+	public Kangaroo (String name, double weight, double height, String gender, String bloodType, double bmi, String heartLevel, 
+	 BDate birthDateK, boolean needsShot, double food) {
 		this.name = name;
 		this.weight = weight;
 		this.height = height;
 		this.gender = gender;
 		this.bloodType = bloodType;
-		this.bmi = bmi;
-		this.heartLevel = heartLevel;
+		this.bmi = calculateBmi();
+		this.heartLevel = calculateHeartLevel();
 		this.birthDateK = birthDateK;	
 		this.needsShot = needsShot;
-		this.food = food;
+		this.food = calculateFoodPerKangaroo();
+		
 	}
 
 
@@ -180,7 +185,7 @@ public final static String HEMBRA = "Female";
 
 
 	public String calculateHeartLevel() {
-
+		heartLevel = "-";
 	if (needsShot == false) {
 		if (getBmi() < 18.0) {
 
@@ -190,6 +195,7 @@ public final static String HEMBRA = "Female";
 				case "AB": heartLevel = BAJO;
 				break;
 				default : heartLevel = MODERADO;
+				break;
 			}
 
 		} else if (getBmi() >= 18.0 && getBmi() <= 25.0) {
@@ -204,6 +210,16 @@ public final static String HEMBRA = "Female";
 
 		return heartLevel;
 		}
+
+
+	public void weeksAndDaysFromBday(){
+
+		
+	}
+
+
+	
+
 
 
 }
