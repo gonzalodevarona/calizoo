@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 27 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -25,11 +25,11 @@ public class KZone
 
 //Methods
 
-	public KZone(double totalArea, KEnvironment environmentA, KEnvironment environmentB, KEnvironment environmentC){
-	this.totalArea = totalArea;
+	public KZone(KEnvironment environmentA, KEnvironment environmentB, KEnvironment environmentC){
 	this.environmentA = environmentA;
 	this.environmentB = environmentB;
 	this.environmentC = environmentC;
+	this.totalArea = calculateTotalArea();
 	}
 
 
@@ -71,7 +71,11 @@ public class KZone
 		this.environmentC = environmentC;
 	}
 
-
+	public void calculateTotalArea(){
+		totalArea = (	getEnvironmentA().getArea() + getEnvironmentB().getArea() + getEnvironmentC().getArea());
+		
+	}
 	
+
 
 }
