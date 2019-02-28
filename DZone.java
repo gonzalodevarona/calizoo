@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 27 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -26,12 +26,12 @@ public class DZone
 
 //Methods
 
-	public DZone(double temperature, double food, double water, BeardedDragon dragonA, BeardedDragon dragonB){
+	public DZone(double temperature, double food, BeardedDragon dragonA, BeardedDragon dragonB){
 	this.temperature = temperature;
 	this.food = food;
-	this.water = water;
 	this.dragonA = dragonA;
 	this.dragonB = dragonB;
+	this.water = calculateWater();
 	}
 
 
