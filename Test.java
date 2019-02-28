@@ -5,20 +5,23 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 26 FEBRUARY 2019
+ * @LAST UPDATE DATE: 27 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
 package ui;
 
-import model.*;
+
 import java.util.*;
+import model.*;
 
 public class  Test
 {
 
 	//ATTRIBUTES
 	private Scanner reader;
+
+	//RELATIONSHIPS
 	private Exhibition startThisThing;
 
 	//EMPTY CONSTRUCTOR
@@ -41,60 +44,51 @@ public class  Test
 	
 
 	public void init(){
-		BDate dateRoger = new BDate(12, 07, 2010);
-		BDate dateBenji = new BDate(27, 03, 2013);
+		BDate dateRoger = new BDate(12, 7, 2010);
+		BDate dateBenji = new BDate(27, 3, 2013);
 		BDate dateDaisy = new BDate(16, 10, 2014);
-		Kangaroo roger = new Kangaroo("Roger", 80.0, 1.95, setKangarooGender(), "O", 21.0387, "Low", dateRoger, false ,
-		 startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().calculateFoodPerKangaroo());
+		BDate dateBrandon = new BDate(25, 2, 2017);
+		BDate datePage = new BDate(6, 6, 2018);
+		BDate dateHelena = new BDate(10, 9, 2016);
+		Kangaroo roger = new Kangaroo("Roger", 80.0, 1.95, Kangaroo.MALE, "O",  dateRoger );
 
-		Kangaroo benji = new Kangaroo("Benji", 73.0, 1.83, setKangarooGender(), "AB", 21.798, "Low", dateBenji, false,
-		  startThisThing.getZooKangaroos().getEnvironmentB().getKangarooA().calculateFoodPerKangaroo());
+		Kangaroo benji = new Kangaroo("Benji", 73.0, 1.83, Kangaroo.MALE, "AB", dateBenji);
 
-		Kangaroo daisy = new Kangaroo("Daisy", 40.0, 1.50, setKangarooGender(), "A", 17.77, "Low", dateDaisy, false,
-		  startThisThing.getZooKangaroos().getEnvironmentC().getKangarooA().calculateFoodPerKangaroo());
+		Kangaroo daisy = new Kangaroo("Daisy", 40.0, 1.50, Kangaroo.FEMALE, "A", dateDaisy);
 
-		KEnvironment firstEnvironment = new KEnvironment(startThisThing.getZooKangaroos().getEnvironmentA().calculateArea(),  startThisThing.getZooKangaroos().getEnvironmentA().calculateTotalFood(),
-			 startThisThing.getZooKangaroos().getEnvironmentA().calculateWater(), roger, null, null);
+		Kangaroo brandon = new Kangaroo("Brandon", 40.0, 1.50, Kangaroo.MALE, "A", dateBrandon);
 
-		KEnvironment secondEnvironment = new KEnvironment(startThisThing.getZooKangaroos().getEnvironmentB().calculateArea(),  startThisThing.getZooKangaroos().getEnvironmentB().calculateTotalFood(),
-			 startThisThing.getZooKangaroos().getEnvironmentB().calculateWater(), benji, null, null);
+		Kangaroo page = new Kangaroo("Page", 40.0, 1.50, Kangaroo.FEMALE, "A", datePage);
 
-		KEnvironment thirdEnvironment = new KEnvironment(startThisThing.getZooKangaroos().getEnvironmentC().calculateArea(),  startThisThing.getZooKangaroos().getEnvironmentC().calculateTotalFood(),
-			 startThisThing.getZooKangaroos().getEnvironmentC().calculateWater(), daisy, null, null);
+		Kangaroo helena = new Kangaroo("Helena", 40.0, 1.50, Kangaroo.FEMALE, "A", dateHelena);
 
-		KZone kangarooZone = new KZone(400.0, firstEnvironment, secondEnvironment, thirdEnvironment);
+		KEnvironment firstEnvironment = new KEnvironment(roger, page , null);
+
+		KEnvironment secondEnvironment = new KEnvironment( benji, helena, null);
+
+		KEnvironment thirdEnvironment = new KEnvironment( daisy, brandon, null);
+
+		KZone kangarooZone = new KZone(firstEnvironment, secondEnvironment, thirdEnvironment);
 		BDate dateEsperanza = new BDate(18, 07, 2016);
 		BDate dateJustin = new BDate(23, 11, 2015);
-		BeardedDragon esperanza = new BeardedDragon("Esperanza", 0.45, 0.4, "Female", "O", startThisThing.getZooDragons().getDragonA().calculateBmi() , dateEsperanza);
-		BeardedDragon justin = new BeardedDragon("Justin", 0.45, 0.5, "Male", "A", startThisThing.getZooDragons().getDragonB().calculateBmi(), dateJustin);
-		DZone dragonZone = new DZone(36.3, 6.0, startThisThing.getZooDragons().calculateWater(), esperanza, justin);
-		 startThisThing = new Exhibition("Australia, donde el agua es oro", 1500, kangarooZone, dragonZone);
+		BeardedDragon esperanza = new BeardedDragon("Esperanza", 0.45, 0.4, BeardedDragon.FEMALE, "O", dateEsperanza);
+		BeardedDragon justin = new BeardedDragon("Justin", 0.45, 0.5, BeardedDragon.MALE, "A", dateJustin);
+		DZone dragonZone = new DZone(36.3, 6.0, esperanza, justin);
+		startThisThing = new Exhibition("Australia, donde el agua es oro", 1500, kangarooZone, dragonZone);
 	}
 
 	
 
 	//************************ METHODS ************************
 
-public Kangaroo createKangaroo(KEnvironment kEnvironmentA, KEnvironment kEnvironmentB, KEnvironment kEnvironmentC,){
-
-System.out.print("Name: ");
-		reader.nextLine()+,;
-System.out.print("Weight (in Kg): ");
-		reader.nextDouble()+,;
-		reader.nextLine();
-System.out.print("Height (in M): ");
-		reader.nextDouble()+,;
-		reader.nextLine();
-setKangarooGender(),;
-System.out.print("Blood type: ");
-		reader.nextLine()+,;
-startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().
-}
 
 
-public void determinateNeedsShot(int currentDay, int currentMonth, int currentYear){ //hay que hacerlo a cada canguro?
+
+public void askCurrentDate(){ 
 		int userInput = 0;
-		int todayInDays = 0;
+		int currentDay = 0;
+		int currentMonth = 0;
+		int currentYear = 0;
 
 		System.out.println ("What date is today? \n");
 
@@ -102,100 +96,54 @@ public void determinateNeedsShot(int currentDay, int currentMonth, int currentYe
 		userInput = reader.nextInt();
 		reader.nextLine();
 
-		todayInDays = userInput;
+		currentDay = userInput;
 
 		System.out.print ("Month: ");
 		userInput = reader.nextInt();
 		reader.nextLine();
 
-		userInput *= 30;
-		todayInDays += userInput;
+		currentMonth = userInput;
+
 
 		System.out.print ("Year: ");
 		userInput = reader.nextInt();
 		reader.nextLine();
 
-		userInput -= startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().getBirthDateK().getYear();
-		userInput *= 360;
+		currentYear = userInput;
 
-		todayInDays += (5 + userInput);
+		BDate currentDate = new Bdate (currentDay, currentMonth, currentYear);
 
-		if (todayInDays < 365){
-			startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().setNeedsShot(true);
-		} else { startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().setNeedsShot(true); }
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA() != null){
+		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().determinateNeedsShot(currentDate); }
 
-		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().calculateHeartLevel();
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooB() != null){
+		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooB().determinateNeedsShot(currentDate); }
 
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
+		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC().determinateNeedsShot(currentDate); }
+		
+		
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
+		startThisThing.getZooKangaroos().getEnvironmentB().getKangarooA().determinateNeedsShot(currentDate); }
+
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
+		startThisThing.getZooKangaroos().getEnvironmentB().getKangarooB().determinateNeedsShot(currentDate); }
+			
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){	
+		startThisThing.getZooKangaroos().getEnvironmentC().getKangarooA().determinateNeedsShot(currentDate); }
+
+		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
+		startThisThing.getZooKangaroos().getEnvironmentC().getKangarooB().determinateNeedsShot(currentDate); }
 		
 
 
+		if (startThisThing.getZooKangaroos().getEnvironmentB().getKangarooC() != null){
+			startThisThing.getZooKangaroos().getEnvironmentB().getKangarooC().determinateNeedsShot(currentDate); }
+
+		if (startThisThing.getZooKangaroos().getEnvironmentC().getKangarooC() != null){
+			startThisThing.getZooKangaroos().getEnvironmentC().getKangarooC().determinateNeedsShot(currentDate); }
 	}
 
-
-	public String setKangarooGender(){
-		int userInput = 0;
-		String gender = "";
-
-		System.out.println("1. Male");
-		System.out.println("2. Female");
-		System.out.println("--------------------------------------");
-		System.out.print("| Type the number of your selection: ");
-		userInput = reader.nextInt();
-		reader.nextLine();
-
-			switch (userInput) {
-
-				/*case 1: if (kangaroo == getEnvironmentA()){
-							if (startThisThing.getZooKangaroos().getEnvironmentA().oneMaleKangaroo() == true){
-							while (userInput != 2)
-							System.out.println("For kangaroo's safety, an environment can not have more than one male kangaroo ");
-							System.out.print("Please enter a valid selection: ");
-							userInput = reader.nextInt();
-							reader.nextLine();
-							
-							} else{ gender = Kangaroo.MACHO; } 
-						}
-
-				else if (kangaroo == getEnvironmentB()){
-							if (startThisThing.getZooKangaroos().getEnvironmentB().oneMaleKangaroo() == true){
-							while (userInput != 2)
-							System.out.println("For kangaroo's safety, an environment can not have more than one male kangaroo ");
-							System.out.print("Please enter a valid selection: ");
-							userInput = reader.nextInt();
-							reader.nextLine();
-							
-							} else{ gender = Kangaroo.MACHO; } 
-						
-				}
-				else if (kangaroo == getEnvironmentC()){
-							if (startThisThing.getZooKangaroos().getEnvironmentC().oneMaleKangaroo() == true){
-							while (userInput != 2)
-							System.out.println("For kangaroo's safety, an environment can not have more than one male kangaroo ");
-							System.out.print("Please enter a valid selection: ");
-							userInput = reader.nextInt();
-							reader.nextLine();
-							
-							} else{ gender = Kangaroo.MACHO; } 
-						
-				}
-
-			break; */
-			
-			case 2: gender = Kangaroo.HEMBRA;
-			
-			break;
-
-			default: while (userInput != 1 || userInput != 2)
-			System.out.print("Please enter a valid selection: ");
-			userInput = reader.nextInt();
-			reader.nextLine();
-
-
-			break;
-				
-			}
-		return gender;
-	} 
 
 	
 
@@ -220,56 +168,50 @@ public void determinateNeedsShot(int currentDay, int currentMonth, int currentYe
 
 		showMenuOptions();
 
-		while (userInput != 7){
+		while (userInput != 6){
 
 			userInput = typeNumberSelection(userInput);
 
 			switch (userInput) {
 				case 1: System.out.println("");
-						System.out.println("Please select the environment in where kangaroo will be placed:");
+						System.out.println("Please select the environment for the kangaroo to be placed:");
+						System.out.println("");
+						System.out.println("1. Environment A");
+						System.out.println("2. Environment B");
+						System.out.println("3. Environment C");
+						System.out.println("4. BACK");
+						System.out.println("");
+						System.out.println("--------------------------------------");
+						System.out.print("| Type the number of your selection: ");
+						userInput = reader.nextInt();
+						reader.nextLine();
+						System.out.println("--------------------------------------");
+
+						KEnvironment availableEnvironment = null;
+						availableEnvironment = pickEnvironmentToAddK();
+
+						if (availableEnvironment != null) { /*createKangaroo(availableEnvironment);*/}
+							
+						else if (availableEnvironment == null) {menu();}
+						
+				break;
+
+				case 2: System.out.println("");
+						System.out.println("Please select which kangaroo will be erased:");
 						System.out.println("");
 						System.out.println("1. Environment A");
 						System.out.println("2. Environment B");
 						System.out.println("3. Environment C");
 						System.out.println("4. BACK");
 
-						pickEnvironmentToAddK();
+						//findKangaroo2Delete();
 						userInput = reader.nextInt();
-						reader.nextLine();
-
-						switch (userInput) {
-
-							case 1: if (startThisThing.getZooKangaroos().getEnvironmentA().checkIfEnvironmentIsFull() == true) {
-								System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-							} else { createKangaroo()}
-							break;
-							case 2: if (startThisThing.getZooKangaroos().getEnvironmentB().checkIfEnvironmentIsFull() == true) {
-								System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-							} else { createKangaroo()}
-							break;
-							case 3: if (startThisThing.getZooKangaroos().getEnvironmentC().checkIfEnvironmentIsFull() == true) {
-								System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-							} else { createKangaroo()}
-							break;
-							case 4: menu();
-							break;
-
-							
-						}
+						reader.nextLine(); 
 
 					
 
 
-				break;
-				case 2: System.out.println("");
-						System.out.println("Please select one species from below:");
-						userInput = reader.nextInt();
-						reader.nextLine();
-
-					
-
-
-				break;
+				break; 
 
 				case 6: System.out.print("\033[H\033[2J");  
     					System.out.flush(); 
@@ -290,7 +232,7 @@ public void determinateNeedsShot(int currentDay, int currentMonth, int currentYe
 		
 
 		
-	}
+		}
 
 
  	//ADDED METHODS TO MAIN INTERFACE
@@ -318,27 +260,38 @@ public void determinateNeedsShot(int currentDay, int currentMonth, int currentYe
 	}
 
 		
-}
 
 
-public pickEnvironmentToAddK();
-						userInput = reader.nextInt();
-						reader.nextLine();
 
-						switch (userInput) {
+	public KEnvironment pickEnvironmentToAddK(){
+		
+		KEnvironment kEnvironment = null;
+		int userInput = 0;
+		userInput = reader.nextInt();
+		reader.nextLine();
 
-							case 1: if (startThisThing.getZooKangaroos().getEnvironmentA().checkIfEnvironmentIsFull() == true) {
-								System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-							} else { createKangaroo()}
-							break;
-							case 2: if (startThisThing.getZooKangaroos().getEnvironmentB().checkIfEnvironmentIsFull() == true) {
-								System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-							} else { createKangaroo()}
-							break;
-							case 3: if (startThisThing.getZooKangaroos().getEnvironmentC().checkIfEnvironmentIsFull() == true) {
-								System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-							} else { createKangaroo()}
-							break;
-							case 4: menu();
-							break;
+		switch (userInput) {
+
+			case 1: if (startThisThing.getZooKangaroos().getEnvironmentA().checkIfEnvironmentIsFull() == true) {
+				System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
+			} else { kEnvironment = startThisThing.getZooKangaroos().getEnvironmentA();}
+			break;
+			case 2: if (startThisThing.getZooKangaroos().getEnvironmentB().checkIfEnvironmentIsFull() == true) {
+				System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
+			} else { kEnvironment = startThisThing.getZooKangaroos().getEnvironmentB();}
+			break;
+			case 3: if (startThisThing.getZooKangaroos().getEnvironmentC().checkIfEnvironmentIsFull() == true) {
+				System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
+			} else { kEnvironment = startThisThing.getZooKangaroos().getEnvironmentC();}
+			break;
+			case 4: menu();
+			break;
+		}
+	return kEnvironment;
+	}
+
+
+
+
+
 }
