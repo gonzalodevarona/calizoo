@@ -23,8 +23,8 @@ public final static String MODERADO = "Riesgo moderado";
 public final static String ALTO = "Riesgo alto";
 
 //Domain for gender
-public final static String MACHO = "Male";
-public final static String HEMBRA = "Female";
+public final static String MALE = "Male";
+public final static String FEMALE = "Female";
 
 
 //Attributes
@@ -46,17 +46,16 @@ public final static String HEMBRA = "Female";
 
 //Methods
 	
-	public Kangaroo (String name, double weight, double height, String gender, String bloodType, double bmi, String heartLevel, 
-	 BDate birthDateK, boolean needsShot, double food) {
+	public Kangaroo (String name, double weight, double height, String gender, String bloodType, BDate birthDateK) {
 		this.name = name;
 		this.weight = weight;
 		this.height = height;
 		this.gender = gender;
 		this.bloodType = bloodType;
-		this.bmi = calculateBmi();
-		this.heartLevel = calculateHeartLevel();
-		this.birthDateK = birthDateK;	
-		this.needsShot = needsShot;
+		this.birthDateK = birthDateK;
+		bmi = calculateBmi();
+		this.heartLevel = calculateHeartLevel();	
+		this.needsShot = determinateNeedsShot();
 		this.food = calculateFoodPerKangaroo();
 		
 	}
@@ -162,7 +161,7 @@ public final static String HEMBRA = "Female";
 
 
 
-	public double calculateFoodPerKangaroo() {
+	public void calculateFoodPerKangaroo() {
 
 		if (getWeight() < 30) {
 		food = getWeight() * 0.80;
@@ -171,20 +170,18 @@ public final static String HEMBRA = "Female";
 			    food = getWeight() * 1.1;
 			    
 			} else {
-				food = 0.4 * (getWeight()-48) + 40;
+				food = 0.4 * (getWeight()-48) + 40;}
 
-			}
+	}
 
-		return food; }
-
-	public double calculateBmi () {
+	public void calculateBmi () {
 
 		bmi = getWeight() / (getHeight() * getHeight());
-		return bmi;
+		
 	}
 
 
-	public String calculateHeartLevel() {
+	public void calculateHeartLevel(boolean needsShot) {
 		heartLevel = "-";
 	if (needsShot == false) {
 		if (getBmi() < 18.0) {
@@ -208,11 +205,27 @@ public final static String HEMBRA = "Female";
 		}
 	}
 
-		return heartLevel;
-		}
+	}
 
 
-	public void weeksAndDaysFromBday(){
+	public void determinateNeedsShot(BDate currentDate){ 
+		int todayInDays = 0;
+
+		todayInDays = currentDay;
+
+		currentMonth *= 30;
+		todayInDays += currentMonth;
+
+		currentYear -= getBirthDateK().getYear();
+		currentYear *= 360;
+		todayInDays += currentYear;
+
+
+		if (todayInDays < 360){
+			setNeedsShot(true);
+		} else { setNeedsShot(false); }
+
+		calculateHeartLevel(needsShot);
 
 		
 	}
