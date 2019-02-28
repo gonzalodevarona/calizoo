@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 27 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -14,6 +14,11 @@ package model;
 public class BeardedDragon
 {
 	
+//CONSTANTS
+public final static String MALE = "Male";
+public final static String FEMALE = "Female";
+
+
 //Attributes
 	private String name;
 	private double weight; 
@@ -28,14 +33,14 @@ public class BeardedDragon
 
 	//Methods
 
-	public BeardedDragon (String name, double weight, double height, String gender, String bloodType, double bmi, BDate birthDateD) {
+	public BeardedDragon (String name, double weight, double height, String gender, String bloodType, BDate birthDateD) {
 		this.name = name;
 		this.weight = weight;
 		this.height = height;
 		this.gender = gender;
 		this.bloodType = bloodType;
-		this.bmi = bmi;
 		this.birthDateD = birthDateD;
+		this.bmi = calculateBmi();
 	}
 
 
@@ -108,10 +113,9 @@ public class BeardedDragon
 		this.birthDateD = birthDateD;
 	}
 
-	public double calculateBmi() {
+	public void calculateBmi() {
 
-		bmi = getWeight() / (getHeight() * getHeight());
-		return bmi;
+		bmi = getWeight() / (getHeight() * getHeight());	
 	}
 
 
