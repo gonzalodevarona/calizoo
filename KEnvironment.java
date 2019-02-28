@@ -11,8 +11,8 @@
 
 package model;
 
-public class KEnvironment
-{
+public class KEnvironment{
+
 
 //Attributes
 	private double area;
@@ -26,13 +26,13 @@ public class KEnvironment
 
 	//Methods
 
-	public KEnvironment(double area, double food, double water, Kangaroo kangarooA, Kangaroo kangarooB, Kangaroo kangarooC){
-	this.area = area;
-	this.food = food;
-	this.water = water;
+	public KEnvironment(Kangaroo kangarooA, Kangaroo kangarooB, Kangaroo kangarooC){
 	this.kangarooA = kangarooA;
 	this.kangarooB = kangarooB;
 	this.kangarooC = kangarooC;
+	this.area = calculateArea();
+	this.food = calculateTotalFood();
+	this.water = calculateWater();
 	}
 
 
@@ -94,30 +94,47 @@ public class KEnvironment
 		this.kangarooC = kangarooC;
 	}
 
-	public  double calculateTotalFood() {
+	public  void calculateTotalFood() {
 		food = kangarooA.getFood() + kangarooB.getFood() + kangarooC.getFood();
-		return food;
+		
 	}
 
-	public  double calculateWater(){
+	public  void calculateWater(){
+		if (kangarooA != null){
+			water = (kangarooA.getBmi() + kangarooB.getBmi() + kangarooC.getBmi()) * 1.5;
+		} else {water = (kangarooC.getBmi() + kangarooB.getBmi()) * 1.5; }
 
+		if (kangarooB != null){
 		water = (kangarooA.getBmi() + kangarooB.getBmi() + kangarooC.getBmi()) * 1.5;
-		return water;
-	}
+		} else {water = (kangarooA.getBmi() + kangarooC.getBmi()) * 1.5; }
+
+		if (kangarooC != null){
+		water = (kangarooA.getBmi() + kangarooB.getBmi() + kangarooC.getBmi()) * 1.5;
+		} else {water = (kangarooA.getBmi() + kangarooB.getBmi()) * 1.5; }
+
+		
+	}	
+	
+
+	public void calculateArea() {
+		if (kangarooA != null){
+			area = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
+		} else {area = (kangarooC.getHeight() + kangarooB.getHeight()) * 8.0; }
+
+		if (kangarooB != null){
+		water = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
+		} else {area = (kangarooA.getHeight() + kangarooC.getHeight()) * 8.0; }
+
+		if (kangarooC != null){
+		water = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
+		} else {area = (kangarooA.getHeight() + kangarooB.getHeight()) * 8.0; }
+
+		
+	}	
 
 
-	public double calculateArea(){
 
-		area = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
-		return area; 
-	}
-
-
-	public void updateEnvironment(){
-		calculateTotalFood();
-		calculateWater();
-		calculateArea();
-	}
+	
 
 		public void deleteKangaroo(boolean choise){
 			
@@ -152,6 +169,8 @@ public class KEnvironment
 			}
 
 	} 
+
+	
 
 	public boolean oneMaleKangaroo(){
 		boolean oneMaleKangaroo = false;
