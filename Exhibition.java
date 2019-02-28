@@ -70,6 +70,14 @@ public class Exhibition
 		this.zooDragons = zooDragons;
 	}
 
+	public String needsShot(BDate currentDate){
+
+		String msj = "";
+
+
+		return msj;
+	} 
+
 	
 
 	
