@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 27 FEBRUARY 2019
+ * @LAST UPDATE DATE: 28 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -71,11 +71,79 @@ public class KZone
 		this.environmentC = environmentC;
 	}
 
-	public void calculateTotalArea(){
+	public double calculateTotalArea(){
 		totalArea = (	getEnvironmentA().getArea() + getEnvironmentB().getArea() + getEnvironmentC().getArea());
 		
+		return totalArea;
 	}
 	
 
+	public void deleteKangaroo(int userInput){
+			
+			
+			
+				switch (userInput){
 
-}
+					case 1: environmentA.setKangarooA(null);
+						environmentA.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+						
+						break;
+
+					case 2: environmentA.setKangarooB(null);
+						environmentA.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+						break;
+
+					case 3: environmentA.setKangarooC(null);
+						environmentA.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+						break;
+
+					case 4: environmentB.setKangarooA(null);
+						environmentB.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+								
+							break;
+
+					case 5: environmentB.setKangarooB(null);
+						environmentB.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+							break;
+
+					case 6: environmentB.setKangarooC(null);
+						environmentB.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+							break;
+
+					case 7: environmentC.setKangarooA(null);
+						environmentC.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+							break;
+
+					case 8: environmentC.setKangarooB(null);
+						environmentC.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+							break;
+
+					case 9: environmentC.setKangarooC(null);
+						environmentC.updateEnvironment();
+						System.out.println("Deleated Kangaroo.");
+
+					
+							break;
+
+
+				}
+			}
+
+	} 
+
+
+
