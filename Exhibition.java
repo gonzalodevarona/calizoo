@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 28 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -70,13 +70,55 @@ public class Exhibition
 		this.zooDragons = zooDragons;
 	}
 
-	public String needsShot(BDate currentDate){
-
-		String msj = "";
+	
 
 
-		return msj;
-	} 
+	public void kangarooList(){
+
+
+						System.out.println("");
+						System.out.println("Please select which kangaroo will be erased:");
+						System.out.println("");
+						if(zooKangaroos.getEnvironmentA().getKangarooA() != null){
+						System.out.println("1. " +zooKangaroos.getEnvironmentA().getKangarooA().getName());	
+						} 
+						
+						if(zooKangaroos.getEnvironmentA().getKangarooB() != null){
+						System.out.println("2. "+zooKangaroos.getEnvironmentA().getKangarooB().getName());	
+						} 
+						
+						if(zooKangaroos.getEnvironmentA().getKangarooC() != null){
+						System.out.println("3. "+zooKangaroos.getEnvironmentA().getKangarooC().getName());	
+						}
+						
+						if(zooKangaroos.getEnvironmentB().getKangarooA() != null){
+						System.out.println("4. "+zooKangaroos.getEnvironmentB().getKangarooA().getName());	
+						}
+						
+						if(zooKangaroos.getEnvironmentB().getKangarooB() != null){
+						System.out.println("5. "+zooKangaroos.getEnvironmentB().getKangarooB().getName());	
+						}
+						
+						if(zooKangaroos.getEnvironmentB().getKangarooC() != null){
+						System.out.println("6. "+zooKangaroos.getEnvironmentB().getKangarooC().getName());	
+						}
+						
+						if(zooKangaroos.getEnvironmentC().getKangarooA() != null){
+						System.out.println("7. "+zooKangaroos.getEnvironmentC().getKangarooA().getName());	
+						}
+						
+						if(zooKangaroos.getEnvironmentC().getKangarooB() != null){
+						System.out.println("8. "+zooKangaroos.getEnvironmentC().getKangarooB().getName());	
+						}
+						
+						if(zooKangaroos.getEnvironmentC().getKangarooC() != null){
+						System.out.println("9. "+zooKangaroos.getEnvironmentC().getKangarooC().getName());	
+						}
+						
+					
+						System.out.println("0. BACK");
+
+	}
 
 	
 
