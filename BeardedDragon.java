@@ -113,9 +113,10 @@ public final static String FEMALE = "Female";
 		this.birthDateD = birthDateD;
 	}
 
-	public void calculateBmi() {
+	public double calculateBmi() {
 
 		bmi = getWeight() / (getHeight() * getHeight());	
+		return bmi;
 	}
 
 
