@@ -5,15 +5,16 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 27 FEBRUARY 2019
+ * @LAST UPDATE DATE: 28 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
 package ui;
 
 
-import java.util.*;
+
 import model.*;
+import java.util.*;
 
 public class  Test
 {
@@ -52,21 +53,21 @@ public class  Test
 		BDate dateHelena = new BDate(10, 9, 2016);
 		Kangaroo roger = new Kangaroo("Roger", 80.0, 1.95, Kangaroo.MALE, "O",  dateRoger );
 
-		Kangaroo benji = new Kangaroo("Benji", 73.0, 1.83, Kangaroo.MALE, "AB", dateBenji);
-
 		Kangaroo daisy = new Kangaroo("Daisy", 40.0, 1.50, Kangaroo.FEMALE, "A", dateDaisy);
 
-		Kangaroo brandon = new Kangaroo("Brandon", 40.0, 1.50, Kangaroo.MALE, "A", dateBrandon);
+		Kangaroo benji = new Kangaroo("Benji", 73.0, 1.83, Kangaroo.MALE, "AB", dateBenji);
 
-		Kangaroo page = new Kangaroo("Page", 40.0, 1.50, Kangaroo.FEMALE, "A", datePage);
+		Kangaroo helena = new Kangaroo("Helena", 45.0, 1.54, Kangaroo.FEMALE, "A", dateHelena);
 
-		Kangaroo helena = new Kangaroo("Helena", 40.0, 1.50, Kangaroo.FEMALE, "A", dateHelena);
+		Kangaroo brandon = new Kangaroo("Brandon", 72.0, 1.85, Kangaroo.MALE, "B", dateBrandon);
 
-		KEnvironment firstEnvironment = new KEnvironment(roger, page , null);
+		Kangaroo page = new Kangaroo("Page", 50.0, 1.60, Kangaroo.FEMALE, "O", datePage);
+
+		KEnvironment firstEnvironment = new KEnvironment(roger, daisy , null);
 
 		KEnvironment secondEnvironment = new KEnvironment( benji, helena, null);
 
-		KEnvironment thirdEnvironment = new KEnvironment( daisy, brandon, null);
+		KEnvironment thirdEnvironment = new KEnvironment( brandon, page, null);
 
 		KZone kangarooZone = new KZone(firstEnvironment, secondEnvironment, thirdEnvironment);
 		BDate dateEsperanza = new BDate(18, 07, 2016);
@@ -84,65 +85,7 @@ public class  Test
 
 
 
-public void askCurrentDate(){ 
-		int userInput = 0;
-		int currentDay = 0;
-		int currentMonth = 0;
-		int currentYear = 0;
 
-		System.out.println ("What date is today? \n");
-
-		System.out.print ("Day: ");
-		userInput = reader.nextInt();
-		reader.nextLine();
-
-		currentDay = userInput;
-
-		System.out.print ("Month: ");
-		userInput = reader.nextInt();
-		reader.nextLine();
-
-		currentMonth = userInput;
-
-
-		System.out.print ("Year: ");
-		userInput = reader.nextInt();
-		reader.nextLine();
-
-		currentYear = userInput;
-
-		BDate currentDate = new Bdate (currentDay, currentMonth, currentYear);
-
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA() != null){
-		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA().determinateNeedsShot(currentDate); }
-
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooB() != null){
-		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooB().determinateNeedsShot(currentDate); }
-
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
-		startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC().determinateNeedsShot(currentDate); }
-		
-		
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
-		startThisThing.getZooKangaroos().getEnvironmentB().getKangarooA().determinateNeedsShot(currentDate); }
-
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
-		startThisThing.getZooKangaroos().getEnvironmentB().getKangarooB().determinateNeedsShot(currentDate); }
-			
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){	
-		startThisThing.getZooKangaroos().getEnvironmentC().getKangarooA().determinateNeedsShot(currentDate); }
-
-		if (startThisThing.getZooKangaroos().getEnvironmentA().getKangarooC() != null){
-		startThisThing.getZooKangaroos().getEnvironmentC().getKangarooB().determinateNeedsShot(currentDate); }
-		
-
-
-		if (startThisThing.getZooKangaroos().getEnvironmentB().getKangarooC() != null){
-			startThisThing.getZooKangaroos().getEnvironmentB().getKangarooC().determinateNeedsShot(currentDate); }
-
-		if (startThisThing.getZooKangaroos().getEnvironmentC().getKangarooC() != null){
-			startThisThing.getZooKangaroos().getEnvironmentC().getKangarooC().determinateNeedsShot(currentDate); }
-	}
 
 
 	
@@ -170,9 +113,15 @@ public void askCurrentDate(){
 
 		while (userInput != 6){
 
-			userInput = typeNumberSelection(userInput);
+					System.out.println("--------------------------------------");
+			System.out.print("| Type the number of your selection: ");
+			userInput = reader.nextInt();
+			reader.nextLine();
+			System.out.println("--------------------------------------");
 
 			switch (userInput) {
+
+				//ADD KANGAROOS
 				case 1: System.out.println("");
 						System.out.println("Please select the environment for the kangaroo to be placed:");
 						System.out.println("");
@@ -181,11 +130,10 @@ public void askCurrentDate(){
 						System.out.println("3. Environment C");
 						System.out.println("4. BACK");
 						System.out.println("");
-						System.out.println("--------------------------------------");
-						System.out.print("| Type the number of your selection: ");
+						typeSelectionMssg();
 						userInput = reader.nextInt();
 						reader.nextLine();
-						System.out.println("--------------------------------------");
+						plainLine();
 
 						KEnvironment availableEnvironment = null;
 						availableEnvironment = pickEnvironmentToAddK();
@@ -196,17 +144,43 @@ public void askCurrentDate(){
 						
 				break;
 
-				case 2: System.out.println("");
-						System.out.println("Please select which kangaroo will be erased:");
+				//DELETE KANGAROOS
+				case 2: startThisThing.kangarooList();
 						System.out.println("");
-						System.out.println("1. Environment A");
-						System.out.println("2. Environment B");
-						System.out.println("3. Environment C");
-						System.out.println("4. BACK");
-
-						//findKangaroo2Delete();
+						typeSelectionMssg();
+						
 						userInput = reader.nextInt();
-						reader.nextLine(); 
+						reader.nextLine();
+
+						plainLine();
+
+						switch (userInput) {
+							case 0: menu();
+								break;
+							case 1: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 2: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 3: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 4: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 5: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 6: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 7: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 8: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							case 9: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
+								break;
+							default: menu();
+								break;
+						 	
+						 } 
+
+						 menu();
 
 					
 
@@ -249,14 +223,14 @@ public void askCurrentDate(){
 		System.out.println("");
 	}
 
-	public int typeNumberSelection(int userInput) {
-		
+	public void typeSelectionMssg() {	
 		System.out.println("--------------------------------------");
-			System.out.print("| Type the number of your selection: ");
-			userInput = reader.nextInt();
-			reader.nextLine();
-			System.out.println("--------------------------------------");
-		return userInput;
+		System.out.print("| Type the number of your selection: ");	
+	} 
+
+
+	public void plainLine(){
+		System.out.println("--------------------------------------");
 	}
 
 		
