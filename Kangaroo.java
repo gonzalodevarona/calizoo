@@ -5,11 +5,12 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 27 FEBRUARY 2019
+ * @LAST UPDATE DATE: 28 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
 package model;
+import java.util.*;
 
 
 public class Kangaroo
@@ -18,9 +19,9 @@ public class Kangaroo
 //Constants
 
 //Domain for heartLevel
-public final static String BAJO = "Riesgo bajo";
-public final static String MODERADO = "Riesgo moderado";
-public final static String ALTO = "Riesgo alto";
+public final static String LOW = "Low risk";
+public final static String MODERATED = "Moderated risk";
+public final static String HIGH = "High risk";
 
 //Domain for gender
 public final static String MALE = "Male";
@@ -37,6 +38,8 @@ public final static String FEMALE = "Female";
 	private String heartLevel;
 	private boolean needsShot;
 	private double food;
+	private double area;
+	private double water;
 	
 		
 
@@ -54,10 +57,11 @@ public final static String FEMALE = "Female";
 		this.bloodType = bloodType;
 		this.birthDateK = birthDateK;
 		bmi = calculateBmi();
-		this.heartLevel = calculateHeartLevel();	
 		this.needsShot = determinateNeedsShot();
+		this.heartLevel = calculateHeartLevel();	
 		this.food = calculateFoodPerKangaroo();
-		
+		this.area = calculateArea();
+		this.water = calculateWater();
 	}
 
 
@@ -161,76 +165,125 @@ public final static String FEMALE = "Female";
 
 
 
-	public void calculateFoodPerKangaroo() {
-
-		if (getWeight() < 30) {
-		food = getWeight() * 0.80;
-
-		} else if (getWeight() >= 30 && getWeight() <= 48 ) { 		      
-			    food = getWeight() * 1.1;
-			    
-			} else {
-				food = 0.4 * (getWeight()-48) + 40;}
-
+	public  double getArea() {
+	return area;
 	}
 
-	public void calculateBmi () {
+	public void setArea(double area) {
+		this.area = area; 
+	}
 
-		bmi = getWeight() / (getHeight() * getHeight());
+
+
+	public  double getWater() {
+	return water;
+	}
+
+	public void setWater(double water) {
+		this.water = water; 
+	}
+
+
+
+	public double calculateFoodPerKangaroo() {
+
+		if (weight < 30) {
+		food = weight * 0.80;
+
+		} else if (weight >= 30 && weight <= 48 ) { 		      
+			    food = weight * 1.1;
+			    
+			} else {
+				food = 0.4 * (weight-48) + 40;}
+
+		return food;
+	}
+
+	public double calculateBmi () {
+
+		bmi = weight / (height * height);
+
+		return bmi;
 		
 	}
 
 
-	public void calculateHeartLevel(boolean needsShot) {
+	public String calculateHeartLevel() {
 		heartLevel = "-";
 	if (needsShot == false) {
 		if (getBmi() < 18.0) {
 
 			switch (bloodType) {
-				case "A": heartLevel = BAJO;
+				case "A": heartLevel = LOW;
 				break;
-				case "AB": heartLevel = BAJO;
+				case "AB": heartLevel = LOW;
 				break;
-				default : heartLevel = MODERADO;
+				default : heartLevel = MODERATED;
 				break;
 			}
 
 		} else if (getBmi() >= 18.0 && getBmi() <= 25.0) {
-			heartLevel = MODERADO;
+			heartLevel = MODERATED;
 
 		} else {
 			if (getBloodType() == "A" || getBloodType() == "B" || getBloodType() == "O") {
-				heartLevel = ALTO;
-			} else { heartLevel = MODERADO;}
+				heartLevel = HIGH;
+			} else { heartLevel = MODERATED;}
 		}
 	}
 
+	return heartLevel;
+
 	}
 
+	public boolean determinateNeedsShot() {
+			Calendar today = new GregorianCalendar();
+			int month = today.get(Calendar.MONTH) + 1;
+			int day = today.get(Calendar.DATE);
+			int year = today.get(Calendar.YEAR);
 
-	public void determinateNeedsShot(BDate currentDate){ 
-		int todayInDays = 0;
-
-		todayInDays = currentDay;
-
-		currentMonth *= 30;
-		todayInDays += currentMonth;
-
-		currentYear -= getBirthDateK().getYear();
-		currentYear *= 360;
-		todayInDays += currentYear;
+			boolean needsShot = false;
 
 
-		if (todayInDays < 360){
-			setNeedsShot(true);
-		} else { setNeedsShot(false); }
+			int todayInDays = 0;
 
-		calculateHeartLevel(needsShot);
+			todayInDays = day;
+
+			month *= 30;
+			todayInDays += month;
+
+			year -= getBirthDateK().getYear();
+			year *= 360;
+			todayInDays += year;
+
+
+			if (todayInDays <= 360){
+				needsShot = true;
+			} else { needsShot = false; }
+
+			return needsShot;
+
+		
 
 		
 	}
 
+	public double calculateArea(){
 
+		area = height * 8.0;
+
+		return area;
+
+	}
+
+	public double calculateWater(){
+		water = bmi * 1.5;
+		return water;
+	}
+
+
+
+	
 	
 
 
