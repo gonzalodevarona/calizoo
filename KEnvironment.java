@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 27 FEBRUARY 2019
+ * @LAST UPDATE DATE: 28 FEBRUARY 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -94,91 +94,71 @@ public class KEnvironment{
 		this.kangarooC = kangarooC;
 	}
 
-	public  void calculateTotalFood() {
-		food = kangarooA.getFood() + kangarooB.getFood() + kangarooC.getFood();
+	public  double calculateTotalFood() {
+		food = 0.0;
 		
+		if (kangarooA != null){
+			food += kangarooA.getFood();
+		} else if (kangarooB != null){
+			food += kangarooB.getFood();
+		} else if (kangarooC != null){
+			food += kangarooC.getFood();
+		}
+
+		return food;
 	}
 
-	public  void calculateWater(){
-		if (kangarooA != null){
-			water = (kangarooA.getBmi() + kangarooB.getBmi() + kangarooC.getBmi()) * 1.5;
-		} else {water = (kangarooC.getBmi() + kangarooB.getBmi()) * 1.5; }
+	public  double calculateWater(){
 
-		if (kangarooB != null){
-		water = (kangarooA.getBmi() + kangarooB.getBmi() + kangarooC.getBmi()) * 1.5;
-		} else {water = (kangarooA.getBmi() + kangarooC.getBmi()) * 1.5; }
-
-		if (kangarooC != null){
-		water = (kangarooA.getBmi() + kangarooB.getBmi() + kangarooC.getBmi()) * 1.5;
-		} else {water = (kangarooA.getBmi() + kangarooB.getBmi()) * 1.5; }
-
+		water = 0.0;
 		
+		if (kangarooA != null){
+			water += kangarooA.getWater();
+		} else if (kangarooB != null){
+			water += kangarooB.getWater();
+		} else if (kangarooC != null){
+			water += kangarooC.getWater();
+		}
+
+		return water;
 	}	
 	
 
-	public void calculateArea() {
-		if (kangarooA != null){
-			area = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
-		} else {area = (kangarooC.getHeight() + kangarooB.getHeight()) * 8.0; }
-
-		if (kangarooB != null){
-		water = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
-		} else {area = (kangarooA.getHeight() + kangarooC.getHeight()) * 8.0; }
-
-		if (kangarooC != null){
-		water = (kangarooA.getHeight() + kangarooB.getHeight() + kangarooC.getHeight()) * 8.0;
-		} else {area = (kangarooA.getHeight() + kangarooB.getHeight()) * 8.0; }
-
+	public double calculateArea() {
+		area = 0.0;
 		
+		if (kangarooA != null){
+			area += kangarooA.getArea();
+		} else if (kangarooB != null){
+			area += kangarooB.getArea();
+		} else if (kangarooC != null){
+			area += kangarooC.getArea();
+		}
+
+		return area;
 	}	
 
 
 
 	
 
-		public void deleteKangaroo(boolean choise){
-			
-			int pickKangaroo = 0;
-			if (choise == true){
-			
-				switch (pickKangaroo){
-
-					case 1: setKangarooA(null);
-						updateEnvironment();
-						System.out.println("Deleated Kangaroo #1 from the environment."  );
-						
-						break;
-
-					case 2: setKangarooB(null);
-						updateEnvironment();
-						System.out.println("Deleated Kangaroo #2 from the environment."  );
-
-						break;
-
-					case 3: setKangarooC(null);
-						updateEnvironment();
-						System.out.println("Deleated Kangaroo #3 from the environment." );
-
-						break;
-
-					default: System.out.println("Pick a valid kangaroo");
-						break;
+		public  void updateEnvironment(){
+			calculateArea();
+			calculateTotalFood();
+			calculateWater();
 
 
-				}
-			}
-
-	} 
+		}
 
 	
 
 	public boolean oneMaleKangaroo(){
 		boolean oneMaleKangaroo = false;
 
-		if ((kangarooA.getGender()  == Kangaroo.MACHO) || (kangarooB.getGender()  == Kangaroo.MACHO)){
+		if ((kangarooA.getGender()  == Kangaroo.MALE) || (kangarooB.getGender()  == Kangaroo.MALE)){
 			oneMaleKangaroo = true; }
 			
-			else if (kangarooC != null && kangarooA.getGender() == Kangaroo.MACHO){
+			else if (kangarooC != null && kangarooA.getGender() == Kangaroo.MALE){
 				oneMaleKangaroo = true;
 				}
 
