@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 28 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -150,7 +150,71 @@ public class KEnvironment{
 
 		}
 
+
+
 	
+	public String infoFromEnvironment(){
+		String environmentInfo = "";
+
+
+			if (kangarooA != null ){
+				 environmentInfo += kangarooA.showKangaroosInfo();
+			} 
+
+			if (kangarooB != null ){
+				 environmentInfo += kangarooB.showKangaroosInfo();
+			} 
+
+			if (kangarooC != null ){
+				 environmentInfo += kangarooC.showKangaroosInfo();
+			}
+
+			return environmentInfo;
+	}
+
+	public String listKangaroosShot(){
+		String kangaroosShot = "";
+
+
+			if (kangarooA != null ){
+				 kangaroosShot += kangarooA.listFalse();
+			} 
+
+			if (kangarooB != null ){
+				 kangaroosShot += kangarooB.listFalse();
+			} 
+
+			if (kangarooC != null ){
+				 kangaroosShot += kangarooC.listFalse();
+			}
+
+			return kangaroosShot;
+	}
+
+
+
+	public String listKangaroosVowel(){
+		String kangaroosVowel = "";
+
+
+			if (kangarooA != null ){
+				 kangaroosVowel += kangarooA.listKVowel();
+			} 
+
+			if (kangarooB != null ){
+				 kangaroosVowel += kangarooB.listKVowel();
+			} 
+
+			if (kangarooC != null ){
+				 kangaroosVowel += kangarooC.listKVowel();
+			}
+
+			return kangaroosVowel;
+	}
+
+
+
+		
 
 	public boolean oneMaleKangaroo(){
 		boolean oneMaleKangaroo = false;
@@ -175,8 +239,10 @@ public class KEnvironment{
 		return full;
 	}
 
-	
-	
+
+
+
+
 
 
 
