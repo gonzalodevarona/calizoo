@@ -11,244 +11,118 @@
 
 package model;
 
-public class KEnvironment{
-
-
+public class DZone
+{
+	
 //Attributes
-	private double area;
+	private double temperature;
 	private double food;
 	private double water;
 
 //Relationships
-	private Kangaroo kangarooA;
-	private Kangaroo kangarooB;
-	private Kangaroo kangarooC;
+	private BeardedDragon dragonA;
+	private BeardedDragon dragonB;
 
-	//Methods
 
-	public KEnvironment(Kangaroo kangarooA, Kangaroo kangarooB, Kangaroo kangarooC){
-	this.kangarooA = kangarooA;
-	this.kangarooB = kangarooB;
-	this.kangarooC = kangarooC;
-	this.area = calculateArea();
-	this.food = calculateTotalFood();
+//Methods
+
+	public DZone(double temperature, double food, BeardedDragon dragonA, BeardedDragon dragonB){
+	this.temperature = temperature;
+	this.food = food;
+	this.dragonA = dragonA;
+	this.dragonB = dragonB;
 	this.water = calculateWater();
 	}
 
 
 
-	public  double getArea() {
-	return area;
+	public double getTemperature() {
+		return temperature;
 	}
 
-	public void setArea(double area) {
-		this.area = area;
-	}
-
-
-
-	public  double getFood() {
-	return food;
-	}
-
-	public void setFood(double food) {
-		this.food = food; 
+	public void setTemperature() {
+		this.temperature = temperature;
 	}
 
 
 
-	public  double getWater() {
-	return water;
+	public double getFood() {
+		return food;
 	}
 
-	public void setWater(double water) {
+	public void setFood() {
+		this.food = food;
+	}
+
+
+
+	public double getWater() {
+		return water;
+	}
+
+	public void setWater() {
 		this.water = water;
 	}
 
 
 
-	public  Kangaroo getKangarooA() {
-	return kangarooA;
+	public BeardedDragon getDragonA() {
+		return dragonA;
 	}
 
-	public void setKangarooA(Kangaroo kangarooA) {
-		this.kangarooA = kangarooA;
-	}
-
-
-
-	public  Kangaroo getKangarooB() {
-	return kangarooB;
-	}
-
-	public void setKangarooB(Kangaroo kangarooB) {
-		this.kangarooB = kangarooB;
+	public void setDragonA() {
+		this.dragonA = dragonA;
 	}
 
 
-	public  Kangaroo getKangarooC() {
-	return kangarooC;
+
+	public BeardedDragon getDragonB() {
+		return dragonB;
 	}
 
-	public void setKangarooC(Kangaroo kangarooC) {
-		this.kangarooC = kangarooC;
+	public void setDragonB() {
+		this.dragonB = dragonB;
 	}
 
-	public  double calculateTotalFood() {
-		food = 0.0;
-		
-		if (kangarooA != null){
-			food += kangarooA.getFood();
-		} else if (kangarooB != null){
-			food += kangarooB.getFood();
-		} else if (kangarooC != null){
-			food += kangarooC.getFood();
-		}
-
-		return food;
-	}
 
 	public  double calculateWater(){
 
-		water = 0.0;
-		
-		if (kangarooA != null){
-			water += kangarooA.getWater();
-		} else if (kangarooB != null){
-			water += kangarooB.getWater();
-		} else if (kangarooC != null){
-			water += kangarooC.getWater();
-		}
-
+		water = (dragonA.getBmi() + dragonB.getBmi()) * 0.75;
 		return water;
-	}	
-	
+	}
 
-	public double calculateArea() {
-		area = 0.0;
+
+	public void notifyDragonsFood(){
+
+		if (food < 5.0)
+			System.out.println ("Bearded dragons have less than 5 Kg of food");
+	}
+
+
+	public void notifyDragonsTemperature(){
+
+		if (!(temperature >= 35.0 && temperature <= 40.0))
+			System.out.println ("Bearded dragon's zone is not between 35 and 40 celsius degrees");
+	}
+
+
+	public String infoFromDZone(){
+		String finalZhow = "Those are the two bearded dragons from the zoo:";
+		finalZhow += dragonA.showDragonsInfo();
+		finalZhow += dragonB.showDragonsInfo();
+		return finalZhow;
+
+	}
+
+
+		public String dListVowel (){
+		String theList = "Those are the bearded dragons whose name start and end with a vowel\n";
+		theList += dragonA.listDVowel();
+		theList += dragonB.listDVowel();
 		
-		if (kangarooA != null){
-			area += kangarooA.getArea();
-		} else if (kangarooB != null){
-			area += kangarooB.getArea();
-		} else if (kangarooC != null){
-			area += kangarooC.getArea();
-		}
+		return theList;
 
-		return area;
-	}	
-
-
-
-	
-
-		public  void updateEnvironment(){
-			calculateArea();
-			calculateTotalFood();
-			calculateWater();
-
-
-		}
-
-
-
-	
-	public String infoFromEnvironment(){
-		String environmentInfo = "";
-
-
-			if (kangarooA != null ){
-				 environmentInfo += kangarooA.showKangaroosInfo();
-			} 
-
-			if (kangarooB != null ){
-				 environmentInfo += kangarooB.showKangaroosInfo();
-			} 
-
-			if (kangarooC != null ){
-				 environmentInfo += kangarooC.showKangaroosInfo();
-			}
-
-			return environmentInfo;
-	}
-
-	public String listKangaroosShot(){
-		String kangaroosShot = "";
-
-
-			if (kangarooA != null ){
-				 kangaroosShot += kangarooA.listFalse();
-			} 
-
-			if (kangarooB != null ){
-				 kangaroosShot += kangarooB.listFalse();
-			} 
-
-			if (kangarooC != null ){
-				 kangaroosShot += kangarooC.listFalse();
-			}
-
-			return kangaroosShot;
 	}
 
 
-
-	public String listKangaroosVowel(){
-		String kangaroosVowel = "";
-
-
-			if (kangarooA != null ){
-				 kangaroosVowel += kangarooA.listKVowel();
-			} 
-
-			if (kangarooB != null ){
-				 kangaroosVowel += kangarooB.listKVowel();
-			} 
-
-			if (kangarooC != null ){
-				 kangaroosVowel += kangarooC.listKVowel();
-			}
-
-			return kangaroosVowel;
-	}
-
-
-
-		
-
-	public boolean oneMaleKangaroo(){
-		boolean oneMaleKangaroo = false;
-
-		if ((kangarooA.getGender()  == Kangaroo.MALE) || (kangarooB.getGender()  == Kangaroo.MALE)){
-			oneMaleKangaroo = true; }
-			
-			else if (kangarooC != null && kangarooA.getGender() == Kangaroo.MALE){
-				oneMaleKangaroo = true;
-				}
-
-		return oneMaleKangaroo;
-		}
-		
-	public boolean checkIfEnvironmentIsFull() {
-
-		boolean full = false;
-		if (kangarooA != null && kangarooB != null && kangarooC != null){
-			full = true;
-		}
-
-		return full;
-	}
-
-
-
-
-
-
-
-
-
-} 
-	
-	
-
-
+}
