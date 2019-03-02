@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 27 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -118,6 +118,49 @@ public final static String FEMALE = "Female";
 		bmi = getWeight() / (getHeight() * getHeight());	
 		return bmi;
 	}
+
+
+		public String showDragonsInfo() {
+		
+		String dragonInfo ="\n";
+
+		 dragonInfo += ("\n");
+		 dragonInfo += ("*****************************************************\n");
+		 dragonInfo += ("* My name is: "+name+".\n");
+		 dragonInfo += ("* I weight: "+weight+" Kg.\n");
+		 dragonInfo += ("* I am "+height+" m long.\n");
+		 dragonInfo += ("* I am a "+gender+".\n");
+		 dragonInfo += ("* My blood type is: "+bloodType+".\n");
+		 dragonInfo += ("* I was born on "+birthDateD.convertDateToString()+".\n");
+		 dragonInfo += ("* My bmi is: "+bmi+"\n");
+		 dragonInfo += ("*****************************************************\n");
+		 dragonInfo += ("\n");
+		 dragonInfo += ("\n");
+
+		 return dragonInfo;
+		
+
+	}
+
+
+		public String listDVowel (){
+		String dragonVowel = "\n";
+
+		int longN = name.length();
+		longN -= 1;
+
+		if ((name.charAt(0) == 'A' || name.charAt(0) == 'E' || name.charAt(0) == 'I' || name.charAt(0) == 'O' || name.charAt(0) == 'U' || 
+			name.charAt(0) == 'a' || name.charAt(0) == 'e' || name.charAt(0) == 'i' || name.charAt(0) == 'o' || name.charAt(0) == 'u') && 
+			(name.charAt(longN) == 'A' || name.charAt(longN) == 'E' || name.charAt(longN) == 'I' || name.charAt(longN) == 'O' || name.charAt(longN) == 'U' || 
+			name.charAt(longN) == 'a' || name.charAt(longN) == 'e' || name.charAt(longN) == 'i' || name.charAt(longN) == 'o' || name.charAt(longN) == 'u') ){
+			dragonVowel += name+" the bearded dragon. \n";
+		}
+
+		return dragonVowel;
+
+	}
+
+
 
 
 }
