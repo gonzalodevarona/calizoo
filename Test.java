@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 28 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -57,7 +57,7 @@ public class  Test
 
 		Kangaroo benji = new Kangaroo("Benji", 73.0, 1.83, Kangaroo.MALE, "AB", dateBenji);
 
-		Kangaroo helena = new Kangaroo("Helena", 45.0, 1.54, Kangaroo.FEMALE, "A", dateHelena);
+		Kangaroo helena = new Kangaroo("Elena", 45.0, 1.54, Kangaroo.FEMALE, "A", dateHelena);
 
 		Kangaroo brandon = new Kangaroo("Brandon", 72.0, 1.85, Kangaroo.MALE, "B", dateBrandon);
 
@@ -83,7 +83,31 @@ public class  Test
 	//************************ METHODS ************************
 
 
+//ADDED METHODS TO MAIN INTERFACE
+	public void showMenuOptions(){
+		System.out.println("1. Register a new kangaroo.");
+		System.out.println("2. Erase a kangaroo.");
+		System.out.println("3. Replace kangaroo.");
+		System.out.println("4. Show zoo animals whose name start and end with a vowel.");
+		System.out.println("5. Show kangaroos vaccination date");
+		System.out.println("6. Show kangaroos information.");
+		System.out.println("7. Show bearded dragons information.");
+		System.out.println("8. QUIT PROGRAM");
+		System.out.println("");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("");
+	}
 
+	public void typeSelectionMssg() {	
+		System.out.println("--------------------------------------");
+		System.out.print("| Type the number of your selection: ");	
+	} 
+
+
+	public void plainLine(){
+		System.out.println("--------------------------------------");
+	}
 
 
 
@@ -109,9 +133,11 @@ public class  Test
 		System.out.println("");
 		System.out.println("");
 
-		showMenuOptions();
+		
 
-		while (userInput != 6){
+		while (userInput != 8){
+
+			showMenuOptions();
 
 					System.out.println("--------------------------------------");
 			System.out.print("| Type the number of your selection: ");
@@ -123,8 +149,48 @@ public class  Test
 
 				//ADD KANGAROOS
 				case 1: System.out.println("");
-						System.out.println("Please select the environment for the kangaroo to be placed:");
+						System.out.print("Please type the  name  of the new kangaroo:");
+
+						String name = reader.nextLine();
+
 						System.out.println("");
+
+
+
+						System.out.print("Please type the  weight  of the new kangaroo (in Kg):");
+
+						double weight = reader.nextDouble();
+						reader.nextLine();
+
+						System.out.println("");
+
+
+
+						System.out.print("Please type the  height  of the new kangaroo (in m):");
+						double height = reader.nextDouble();
+						reader.nextLine();
+						System.out.println("");
+
+						System.out.println("");
+						System.out.println("Please select the gender for the new kangaroo:");
+						System.out.println("1. Male.");
+						System.out.println("2.Female");
+						System.out.println("");
+						typeSelectionMssg();
+						userInput = reader.nextInt();
+						reader.nextLine();
+						plainLine();
+
+						String gender = "";
+						//if(userInput == 1){
+						//	gender = startThisThing.Kangaroo.MALE;
+						//} else {gender = startThisThing.Kangaroo.FEMALE;}
+
+						 
+						System.out.println("");
+
+
+
 						System.out.println("1. Environment A");
 						System.out.println("2. Environment B");
 						System.out.println("3. Environment C");
@@ -135,12 +201,12 @@ public class  Test
 						reader.nextLine();
 						plainLine();
 
-						KEnvironment availableEnvironment = null;
+						/*KEnvironment availableEnvironment = null;
 						availableEnvironment = pickEnvironmentToAddK();
 
-						if (availableEnvironment != null) { /*createKangaroo(availableEnvironment);*/}
+						if (availableEnvironment != null) { /*createKangaroo(availableEnvironment);}
 							
-						else if (availableEnvironment == null) {menu();}
+						else if (availableEnvironment == null) {menu();} */
 						
 				break;
 
@@ -155,7 +221,7 @@ public class  Test
 						plainLine();
 
 						switch (userInput) {
-							case 0: menu();
+							case 0: 
 								break;
 							case 1: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
 								break;
@@ -175,19 +241,32 @@ public class  Test
 								break;
 							case 9: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
 								break;
-							default: menu();
+							default: 
 								break;
 						 	
 						 } 
 
-						 menu();
+				break;  	 
 
-					
-
+				case 4: System.out.println( startThisThing.vowelFinalList());
 
 				break; 
 
-				case 6: System.out.print("\033[H\033[2J");  
+				case 5: System.out.println( startThisThing.getZooKangaroos().fullListShots());
+
+				break; 
+
+				case 6: System.out.println( startThisThing.getZooKangaroos().infoFromKZone());
+
+
+				break;
+
+				case 7: System.out.println( startThisThing.getZooDragons().infoFromDZone());
+
+
+				break;
+
+				case 8: System.out.print("\033[H\033[2J");  
     					System.out.flush(); 
 						System.out.println("");
 						System.out.println("THANK YOU FOR USING THE OUTBACK");
@@ -209,35 +288,13 @@ public class  Test
 		}
 
 
- 	//ADDED METHODS TO MAIN INTERFACE
-	public void showMenuOptions(){
-		System.out.println("1. Register a new kangaroo.");
-		System.out.println("2. Erase a kangaroo.");
-		System.out.println("3. Replace kangaroo.");
-		System.out.println("4. Find zoo animals which its name start and end with a vowel.");
-		System.out.println("5. Display kangaroos vaccination date");
-		System.out.println("6. QUIT PROGRAM");
-		System.out.println("");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("");
-	}
-
-	public void typeSelectionMssg() {	
-		System.out.println("--------------------------------------");
-		System.out.print("| Type the number of your selection: ");	
-	} 
-
-
-	public void plainLine(){
-		System.out.println("--------------------------------------");
-	}
+ 	
 
 		
 
 
 
-	public KEnvironment pickEnvironmentToAddK(){
+	/*public KEnvironment pickEnvironmentToAddK(){
 		
 		KEnvironment kEnvironment = null;
 		int userInput = 0;
@@ -262,7 +319,7 @@ public class  Test
 			break;
 		}
 	return kEnvironment;
-	}
+	} */
 
 
 
