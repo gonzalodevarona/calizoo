@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 23 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -57,5 +57,32 @@ public class BDate
 	public void setYear(int year) {
 		this.year = year;
 	}
+
+	public String convertDateToString(){
+	String bornDate = "";
+	 bornDate += Integer.toString(day);
+	 bornDate += "/";
+	 bornDate += Integer.toString(month);
+	 bornDate += "/";
+	 bornDate += Integer.toString(year);
+
+	 return bornDate;
+	}
+
+	public String dateOfShot(){
+		String dateOfShot = "";
+		int yearPlus = year + 1;
+	 dateOfShot += Integer.toString(day);
+	 dateOfShot += "/";
+	 dateOfShot += Integer.toString(month);
+	 dateOfShot += "/";
+	 dateOfShot += Integer.toString(yearPlus);
+
+	 return dateOfShot;
+
+	}
+
+
+	
 
 }
