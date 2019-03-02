@@ -5,4 +5,7 @@ REPORT OF SIGNIFICANT UPGRADES
 
 FEB.28.2019 - MAJOR UPGRADE FOR THE CODE, DELETING KANGAROOS AND UPDATING DATA *WORKS* 
 ANYTHING ELSE FROM THE 5 PRINCIPAL ACTIONS FROM THE MENU IS NOT WORKING.
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+MAR.1.2019 - MAJOR UPGRADE FOR THE CODE, DELETING KANGAROOS, SHOW ZOO ANIMALS WHOSE NAME START AND END WITH A VOWEL, SHOW KANGAROOS VACCINATION DATE, SHOW KANGAROOS INFORMATION, SHOW BEARDED DRAGONS INFORMATION AND QUIT PROGRAM  *WORKS*
+MISSING CREATE KANGAROOS AND REPLACE KANGAROO.
+------------------------------------------------------------------------------------------------------------------------------
