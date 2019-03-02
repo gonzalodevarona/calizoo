@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 28 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -209,7 +209,7 @@ public final static String FEMALE = "Female";
 
 
 	public String calculateHeartLevel() {
-		heartLevel = "-";
+		heartLevel = "no risk";
 	if (needsShot == false) {
 		if (getBmi() < 18.0) {
 
@@ -245,19 +245,20 @@ public final static String FEMALE = "Female";
 			boolean needsShot = false;
 
 
-			int todayInDays = 0;
+			
 
-			todayInDays = day;
+			day -= getBirthDateK().getDay();
+			
 
-			month *= 30;
-			todayInDays += month;
+			month = (month - getBirthDateK().getMonth()) * 30;
+			
 
-			year -= getBirthDateK().getYear();
-			year *= 360;
-			todayInDays += year;
+			year = (year - getBirthDateK().getYear()) * 360;
+		
+			int daysDifference = (day + month + year);
 
 
-			if (todayInDays <= 360){
+			if (daysDifference < 360){
 				needsShot = true;
 			} else { needsShot = false; }
 
@@ -283,8 +284,60 @@ public final static String FEMALE = "Female";
 
 
 
+	public String showKangaroosInfo() {
+		
+		String kangarooInfo ="\n";
+
+		 kangarooInfo += ("\n");
+		 kangarooInfo += ("*****************************************************\n");
+		 kangarooInfo += ("* My name is: "+name+".\n");
+		 kangarooInfo += ("* I weight: "+weight+" Kg.\n");
+		 kangarooInfo += ("* I am "+height+" m tall.\n");
+		 kangarooInfo += ("* I am a "+gender+".\n");
+		 kangarooInfo += ("* My blood type is: "+bloodType+".\n");
+		 kangarooInfo += ("* I was born on "+birthDateK.convertDateToString()+".\n");
+		 kangarooInfo += ("* My bmi is: "+bmi+"\n");
+		 kangarooInfo += ("* I have a "+heartLevel+" from heart diseases.\n");
+		 kangarooInfo += ("*****************************************************\n");
+		 kangarooInfo += ("\n");
+		 kangarooInfo += ("\n");
+
+		 return kangarooInfo;
+		
+
+	}
+
+	public String listFalse(){
+		String kangarooFalse ="\n";
+		if(needsShot == false){
+
+			kangarooFalse += (name+" "+birthDateK.dateOfShot()+"\n");
+
+		}
+
+		return kangarooFalse;
+
+	}
+
+	public String listKVowel (){
+		String kangarooVowel = "\n";
+
+		int longN = name.length();
+		longN -= 1;
+
+		if ((name.charAt(0) == 'A' || name.charAt(0) == 'E' || name.charAt(0) == 'I' || name.charAt(0) == 'O' || name.charAt(0) == 'U' || 
+			name.charAt(0) == 'a' || name.charAt(0) == 'e' || name.charAt(0) == 'i' || name.charAt(0) == 'o' || name.charAt(0) == 'u') && 
+			(name.charAt(longN) == 'A' || name.charAt(longN) == 'E' || name.charAt(longN) == 'I' || name.charAt(longN) == 'O' || name.charAt(longN) == 'U' || 
+			name.charAt(longN) == 'a' || name.charAt(longN) == 'e' || name.charAt(longN) == 'i' || name.charAt(longN) == 'o' || name.charAt(longN) == 'u') ){
+			kangarooVowel += name+" the kangaroo. \n";
+		}
+
+		return kangarooVowel;
+
+	}
 	
-	
+
+
 
 
 
