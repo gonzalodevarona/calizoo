@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 28 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -84,57 +84,68 @@ public class KZone
 			
 				switch (userInput){
 
-					case 1: environmentA.setKangarooA(null);
+					case 1: if(environmentA.getKangarooA() != null)
+						{environmentA.setKangarooA(null);
 						environmentA.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
+						
 						
 						break;
 
-					case 2: environmentA.setKangarooB(null);
+					case 2: if(environmentA.getKangarooB() != null)
+						{environmentA.setKangarooB(null);
 						environmentA.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
+
 
 						break;
 
-					case 3: environmentA.setKangarooC(null);
+					case 3: if(environmentA.getKangarooC() != null)
+						{environmentA.setKangarooC(null);
 						environmentA.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 
 						break;
 
-					case 4: environmentB.setKangarooA(null);
+					case 4: if(environmentB.getKangarooA() != null)
+						{environmentB.setKangarooA(null);
 						environmentB.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 								
 							break;
 
-					case 5: environmentB.setKangarooB(null);
+					case 5: if(environmentB.getKangarooB() != null)
+						{environmentB.setKangarooB(null);
 						environmentB.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 
 							break;
 
-					case 6: environmentB.setKangarooC(null);
+					case 6: if(environmentB.getKangarooC() != null)
+						{environmentB.setKangarooC(null);
 						environmentB.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 
 							break;
 
-					case 7: environmentC.setKangarooA(null);
+					case 7: if(environmentC.getKangarooA() != null)
+						{environmentC.setKangarooA(null);
 						environmentC.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 
 							break;
 
-					case 8: environmentC.setKangarooB(null);
+					case 8: if(environmentC.getKangarooB() != null)
+						{environmentC.setKangarooB(null);
 						environmentC.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 
 							break;
 
-					case 9: environmentC.setKangarooC(null);
+					case 9: if(environmentC.getKangarooC() != null)
+						{environmentC.setKangarooC(null);
 						environmentC.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");
+						System.out.println("Deleated Kangaroo.");}
 
 					
 							break;
@@ -142,6 +153,51 @@ public class KZone
 
 				}
 			}
+
+	public String infoFromKZone(){
+
+		String finalShow = "Those are the kangaroos from the first environment";
+		  finalShow += environmentA.infoFromEnvironment();
+		  finalShow += "\n";
+		  finalShow += "\n";
+
+		  finalShow += "Those are the kangaroos from the second environment";
+		  finalShow += environmentB.infoFromEnvironment();
+		  finalShow += "\n";
+		  finalShow += "\n";
+
+		  finalShow += "Those are the kangaroos from the third environment";
+		  finalShow += environmentC.infoFromEnvironment();
+
+			return finalShow;
+
+
+	}
+
+
+	public String fullListShots (){
+		String theList = "Those are the kangaroos who already got vaccinated and the date they got it\n";
+		theList += environmentA.listKangaroosShot();
+		theList += environmentB.listKangaroosShot();
+		theList += environmentC.listKangaroosShot();
+		return theList;
+
+	}
+
+
+
+	public String kListVowel (){
+		String theList = "Those are the kangaroos whose name start and end with a vowel\n";
+		theList += environmentA.listKangaroosVowel();
+		theList += environmentB.listKangaroosVowel();
+		theList += environmentC.listKangaroosVowel();
+		return theList;
+
+	}
+
+
+
+
 
 	} 
 
