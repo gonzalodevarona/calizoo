@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 27 FEBRUARY 2019
+ * @LAST UPDATE DATE: 1 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -95,13 +95,34 @@ public class DZone
 	public void notifyDragonsFood(){
 
 		if (food < 5.0)
-			System.out.println ("Los dragones barbados tienen menos de 5 kg de comida");
+			System.out.println ("Bearded dragons have less than 5 Kg of food");
 	}
 
 
 	public void notifyDragonsTemperature(){
 
 		if (!(temperature >= 35.0 && temperature <= 40.0))
-			System.out.println ("La zona de los dragones barbados no está entre 35 y 40 grados celsius");
+			System.out.println ("Bearded dragon's zone is not between 35 and 40 celsius degrees");
 	}
+
+
+	public String infoFromDZone(){
+		String finalZhow = "Those are the two bearded dragons from the zoo:";
+		finalZhow += dragonA.showDragonsInfo();
+		finalZhow += dragonB.showDragonsInfo();
+		return finalZhow;
+
+	}
+
+
+		public String dListVowel (){
+		String theList = "Those are the bearded dragons whose name start and end with a vowel\n";
+		theList += dragonA.listDVowel();
+		theList += dragonB.listDVowel();
+		
+		return theList;
+
+	}
+
+
 }
