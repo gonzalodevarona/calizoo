@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 1 MARCH 2019
+ * @LAST UPDATE DATE: 3 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -290,8 +290,8 @@ public final static String FEMALE = "Female";
 
 		 kangarooInfo += ("\n");
 		 kangarooInfo += ("*****************************************************\n");
-		 kangarooInfo += ("* My name is: "+name+".\n");
-		 kangarooInfo += ("* I weight: "+weight+" Kg.\n");
+		 kangarooInfo += ("* My name is "+name+".\n");
+		 kangarooInfo += ("* I weight "+weight+" Kg.\n");
 		 kangarooInfo += ("* I am "+height+" m tall.\n");
 		 kangarooInfo += ("* I am a "+gender+".\n");
 		 kangarooInfo += ("* My blood type is: "+bloodType+".\n");
@@ -336,6 +336,8 @@ public final static String FEMALE = "Female";
 
 	}
 	
+
+
 
 
 
