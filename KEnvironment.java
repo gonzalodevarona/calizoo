@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 1 MARCH 2019
+ * @LAST UPDATE DATE: 3 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -216,28 +216,66 @@ public class KEnvironment{
 
 		
 
-	public boolean oneMaleKangaroo(){
-		boolean oneMaleKangaroo = false;
+	
+		
 
-		if ((kangarooA.getGender()  == Kangaroo.MALE) || (kangarooB.getGender()  == Kangaroo.MALE)){
-			oneMaleKangaroo = true; }
+	public String createKangaroo(Kangaroo theNew) {
+		String reply = "";
+		
+		if (kangarooA == null || kangarooB == null || kangarooC == null) {
 			
-			else if (kangarooC != null && kangarooA.getGender() == Kangaroo.MALE){
-				oneMaleKangaroo = true;
-				}
+			if(theNew.getGender().equals(Kangaroo.MALE)) {
+				
+				if (oneMaleKangaroo()) {
+					reply += "ERROR: There is already one male kangaroo, for kangaroos safety there can not be 2 males in the same environment.";
+				}		
+			} else  if(kangarooA == null) {
+				kangarooA = theNew;
+				updateEnvironment();
+				reply += "Kangaroo successfully added";
+			}else if (kangarooB == null) {
+				kangarooB = theNew;
+				updateEnvironment();
+				reply += "Kangaroo successfully added";
+
+			}else if (kangarooC == null) {
+				kangarooC = theNew;
+				updateEnvironment();
+				reply += "Kangaroo successfully added";
+
+			} 
+		
+			
+			
+			
+		}else {
+			reply += "This kangaroo can not be added to this environment because it is full.";
+		}
+		
+		return reply;
+	}
+
+
+	public boolean oneMaleKangaroo(){
+		boolean oneMaleKangaroo = true;
+
+		if ((kangarooA != null && kangarooA.getGender()  == Kangaroo.MALE) || (kangarooB != null && kangarooB.getGender()  == Kangaroo.MALE) ||
+			(kangarooC != null && kangarooC.getGender() == Kangaroo.MALE)){
+			 } else {oneMaleKangaroo = false;}
 
 		return oneMaleKangaroo;
 		}
-		
-	public boolean checkIfEnvironmentIsFull() {
 
-		boolean full = false;
-		if (kangarooA != null && kangarooB != null && kangarooC != null){
-			full = true;
-		}
 
-		return full;
-	}
+
+
+
+
+
+
+ 
+
+
 
 
 
