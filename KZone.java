@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 1 MARCH 2019
+ * @LAST UPDATE DATE: 3 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -156,17 +156,17 @@ public class KZone
 
 	public String infoFromKZone(){
 
-		String finalShow = "Those are the kangaroos from the first environment";
+		String finalShow = "Those are the kangaroos from the first environment:";
 		  finalShow += environmentA.infoFromEnvironment();
 		  finalShow += "\n";
 		  finalShow += "\n";
 
-		  finalShow += "Those are the kangaroos from the second environment";
+		  finalShow += "Those are the kangaroos from the second environment:";
 		  finalShow += environmentB.infoFromEnvironment();
 		  finalShow += "\n";
 		  finalShow += "\n";
 
-		  finalShow += "Those are the kangaroos from the third environment";
+		  finalShow += "Those are the kangaroos from the third environment:";
 		  finalShow += environmentC.infoFromEnvironment();
 
 			return finalShow;
@@ -196,10 +196,43 @@ public class KZone
 	}
 
 
+	
 
 
 
-	} 
+	 public void createKangaroo(Kangaroo theNew , int environment) {
+		   
+		   String reply = "";
+
+
+		   switch (environment) {
+		   		case 1: reply += environmentA.createKangaroo(theNew);
+		   		break;
+		   		case 2: reply += environmentB.createKangaroo(theNew);
+		   		break;
+		   		case 3: reply += environmentC.createKangaroo(theNew);
+		   		break;
+		   		default: reply += "ERROR: Invalid selection";
+		   		break;
+		   }
+		  
+		   System.out.println(reply);
+		   
+		  
+	   }
+
+
+	
+	 
+
+
+
+
+
+
+
+
+} //final
 
 
 
