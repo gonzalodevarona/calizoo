@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 1 MARCH 2019
+ * @LAST UPDATE DATE: 3 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -86,9 +86,9 @@ public class  Test
 //ADDED METHODS TO MAIN INTERFACE
 	public void showMenuOptions(){
 		System.out.println("1. Register a new kangaroo.");
-		System.out.println("2. Erase a kangaroo.");
+		System.out.println("2. Delete a kangaroo.");
 		System.out.println("3. Replace kangaroo.");
-		System.out.println("4. Show zoo animals whose name start and end with a vowel.");
+		System.out.println("4. Show exhibition animals whose name start and end with a vowel.");
 		System.out.println("5. Show kangaroos vaccination date");
 		System.out.println("6. Show kangaroos information.");
 		System.out.println("7. Show bearded dragons information.");
@@ -108,6 +108,7 @@ public class  Test
 	public void plainLine(){
 		System.out.println("--------------------------------------");
 	}
+
 
 
 
@@ -166,52 +167,83 @@ public class  Test
 
 
 
-						System.out.print("Please type the  height  of the new kangaroo (in m):");
+						System.out.print("Please type the  height  of the new kangaroo (in m): ");
 						double height = reader.nextDouble();
 						reader.nextLine();
 						System.out.println("");
 
 						System.out.println("");
-						System.out.println("Please select the gender for the new kangaroo:");
-						System.out.println("1. Male.");
-						System.out.println("2.Female");
+						System.out.println("Please select the gender for the new kangaroo: \n 1. Male \n 2.Female");
 						System.out.println("");
 						typeSelectionMssg();
 						userInput = reader.nextInt();
 						reader.nextLine();
 						plainLine();
 
-						String gender = "";
-						//if(userInput == 1){
-						//	gender = startThisThing.Kangaroo.MALE;
-						//} else {gender = startThisThing.Kangaroo.FEMALE;}
-
-						 
+						String gender = (userInput == 1? Kangaroo.MALE : Kangaroo.FEMALE);
 						System.out.println("");
 
-
-
-						System.out.println("1. Environment A");
-						System.out.println("2. Environment B");
-						System.out.println("3. Environment C");
-						System.out.println("4. BACK");
+						System.out.println("Please select the blood type of the new kangaroo: ");
+						System.out.println("1. O");
+						System.out.println("2. A");
+						System.out.println("3. AB");
+						System.out.println("4. B");
 						System.out.println("");
 						typeSelectionMssg();
 						userInput = reader.nextInt();
 						reader.nextLine();
 						plainLine();
 
-						/*KEnvironment availableEnvironment = null;
-						availableEnvironment = pickEnvironmentToAddK();
+						String bloodType = startThisThing.convertBloodType(userInput);
+						System.out.println("");
 
-						if (availableEnvironment != null) { /*createKangaroo(availableEnvironment);}
-							
-						else if (availableEnvironment == null) {menu();} */
+
+						System.out.print("Please type the day of birth of the new kangaroo: ");
+						int day = reader.nextInt();
+						reader.nextLine();
+						System.out.println("");
+
+
+						System.out.print("Please type the month of birth of the new kangaroo: ");
+						int month = reader.nextInt();
+						reader.nextLine();
+						System.out.println("");
+
+
+						System.out.print("Please type the year of birth of the new kangaroo: ");
+						int year = reader.nextInt();
+						reader.nextLine();
+						System.out.println("");
+
+						BDate newDate = new BDate(day, month, year);
+
+						Kangaroo theNew = new Kangaroo(name, weight, height, gender, bloodType, newDate);
+
+						System.out.println("Please select the environment for the new kangaroo: ");
+						System.out.println("1. First environment.");
+						System.out.println("2. Second environment");
+						System.out.println("3. Third environment");
+						System.out.println("");
+						typeSelectionMssg();
+						userInput = reader.nextInt();
+						reader.nextLine();
+						plainLine();
+
+						int environment = userInput;
+
+						startThisThing.executeCreate(theNew, environment);
+						System.out.println("");
+						System.out.println("");
+
+
 						
 				break;
 
 				//DELETE KANGAROOS
-				case 2: startThisThing.kangarooList();
+				case 2: System.out.println("");
+						System.out.println("Please select which kangaroo will be erased:");
+						System.out.println("");
+						startThisThing.kangarooList();
 						System.out.println("");
 						typeSelectionMssg();
 						
@@ -246,31 +278,187 @@ public class  Test
 						 	
 						 } 
 
-				break;  	 
+				break; 
 
+				case 3: /*
+				System.out.println("");
+				System.out.println("Please select the kangaroo that you want to change its environment:");
+				startThisThing.kangarooListWE();
+				System.out.println("");
+				typeSelectionMssg();
+				
+				userInput = reader.nextInt();
+				reader.nextLine();
+
+				plainLine();
+
+					switch (userInput) {
+						case 0: 
+							break;
+
+
+
+						case 1: int kangarooSw = 1;
+								if(startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA() != null){
+								startThisThing.environmentPosibilities4A();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooA(userInput, kangarooSw);
+							} else {System.out.println("ERROR: Invalid kangaroo selection")}
+
+
+
+							break;
+
+
+
+						case 2: int kangarooSw = 2;
+								startThisThing.environmentPosibilities4A();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooA(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 3: int kangarooSw = 3;
+								startThisThing.environmentPosibilities4A();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooA(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 4: int kangarooSw = 4;
+								startThisThing.environmentPosibilities4B();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooB(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 5: int kangarooSw = 5;
+								startThisThing.environmentPosibilities4B();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooB(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 6: int kangarooSw = 6;
+								startThisThing.environmentPosibilities4B();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooB(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 7: int kangarooSw = 7;
+								startThisThing.environmentPosibilities4C();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooC(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 8: int kangarooSw = 8;	
+								startThisThing.environmentPosibilities4C();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooC(userInput, kangarooSw);
+
+
+
+							break;
+
+
+
+						case 9: int kangarooSw = 9;
+								startThisThing.environmentPosibilities4C();
+								typeSelectionMssg();
+								userInput = reader.nextInt();
+								reader.nextLine();
+								plainLine();
+								startThisThing.getZooKangaroos().switchKangarooC(userInput, kangarooSw);
+
+
+							break;
+						default: 
+							break; }
+
+				 	 */
+				break;
+				//SHOW EXHIBITION ANIMALS WHOSE NAME START AND END WITH A VOWEL
 				case 4: System.out.println( startThisThing.vowelFinalList());
 
 				break; 
 
+				//SHOW KANGAROOS VACCINATION DATE
 				case 5: System.out.println( startThisThing.getZooKangaroos().fullListShots());
 
 				break; 
 
+				//SHOW KANGAROOS INFO
 				case 6: System.out.println( startThisThing.getZooKangaroos().infoFromKZone());
 
 
 				break;
 
+				//SHOW BEARDED DRAGONS INFO
 				case 7: System.out.println( startThisThing.getZooDragons().infoFromDZone());
 
 
 				break;
 
+				//QUIT PTOGRAM
 				case 8: System.out.print("\033[H\033[2J");  
     					System.out.flush(); 
 						System.out.println("");
 						System.out.println("THANK YOU FOR USING THE OUTBACK");
 						System.out.println("");
+
+				break;
+
+				default:
 
 				break;
 			
@@ -285,7 +473,7 @@ public class  Test
 		
 
 		
-		}
+		
 
 
  	
@@ -294,35 +482,23 @@ public class  Test
 
 
 
-	/*public KEnvironment pickEnvironmentToAddK(){
-		
-		KEnvironment kEnvironment = null;
-		int userInput = 0;
-		userInput = reader.nextInt();
-		reader.nextLine();
-
-		switch (userInput) {
-
-			case 1: if (startThisThing.getZooKangaroos().getEnvironmentA().checkIfEnvironmentIsFull() == true) {
-				System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-			} else { kEnvironment = startThisThing.getZooKangaroos().getEnvironmentA();}
-			break;
-			case 2: if (startThisThing.getZooKangaroos().getEnvironmentB().checkIfEnvironmentIsFull() == true) {
-				System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-			} else { kEnvironment = startThisThing.getZooKangaroos().getEnvironmentB();}
-			break;
-			case 3: if (startThisThing.getZooKangaroos().getEnvironmentC().checkIfEnvironmentIsFull() == true) {
-				System.out.println("This environment is full, try with another one or delete kangaroos from this environment");
-			} else { kEnvironment = startThisThing.getZooKangaroos().getEnvironmentC();}
-			break;
-			case 4: menu();
-			break;
-		}
-	return kEnvironment;
-	} */
+	
 
 
 
 
 
-}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+} //final
