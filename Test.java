@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 3 MARCH 2019
+ * @LAST UPDATE DATE: 4 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -280,152 +280,34 @@ public class  Test
 
 				break; 
 
-				case 3: /*
+				case 3: 
 				System.out.println("");
 				System.out.println("Please select the kangaroo that you want to change its environment:");
+
 				startThisThing.kangarooListWE();
+
 				System.out.println("");
 				typeSelectionMssg();
-				
 				userInput = reader.nextInt();
 				reader.nextLine();
-
 				plainLine();
+				int kangarooSw = userInput; //KANGAROO 4 CHANGE
 
-					switch (userInput) {
-						case 0: 
-							break;
+				if (startThisThing.executeCheck4Change(kangarooSw) == true){
+
+				typeSelectionMssg();
+				userInput = reader.nextInt(); //ENVIRONMENT 4 CHANGE
+				reader.nextLine();
+				plainLine();
+				startThisThing.executeChange(userInput, kangarooSw);
 
 
-
-						case 1: int kangarooSw = 1;
-								if(startThisThing.getZooKangaroos().getEnvironmentA().getKangarooA() != null){
-								startThisThing.environmentPosibilities4A();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooA(userInput, kangarooSw);
-							} else {System.out.println("ERROR: Invalid kangaroo selection")}
+				} else if (kangarooSw == 0) {}
+				else {System.out.println("ERROR: Invalid kangaroo selection or change can not be done for kangaroos safety. ");}
+				
 
 
 
-							break;
-
-
-
-						case 2: int kangarooSw = 2;
-								startThisThing.environmentPosibilities4A();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooA(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 3: int kangarooSw = 3;
-								startThisThing.environmentPosibilities4A();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooA(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 4: int kangarooSw = 4;
-								startThisThing.environmentPosibilities4B();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooB(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 5: int kangarooSw = 5;
-								startThisThing.environmentPosibilities4B();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooB(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 6: int kangarooSw = 6;
-								startThisThing.environmentPosibilities4B();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooB(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 7: int kangarooSw = 7;
-								startThisThing.environmentPosibilities4C();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooC(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 8: int kangarooSw = 8;	
-								startThisThing.environmentPosibilities4C();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooC(userInput, kangarooSw);
-
-
-
-							break;
-
-
-
-						case 9: int kangarooSw = 9;
-								startThisThing.environmentPosibilities4C();
-								typeSelectionMssg();
-								userInput = reader.nextInt();
-								reader.nextLine();
-								plainLine();
-								startThisThing.getZooKangaroos().switchKangarooC(userInput, kangarooSw);
-
-
-							break;
-						default: 
-							break; }
-
-				 	 */
 				break;
 				//SHOW EXHIBITION ANIMALS WHOSE NAME START AND END WITH A VOWEL
 				case 4: System.out.println( startThisThing.vowelFinalList());
