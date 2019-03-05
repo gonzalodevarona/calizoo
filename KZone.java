@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 3 MARCH 2019
+ * @LAST UPDATE DATE: 4 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -40,6 +40,8 @@ public class KZone
 
 	public void setTotalArea(double totalArea) {
 		this.totalArea = totalArea;
+
+
 	}
 
 
@@ -87,7 +89,12 @@ public class KZone
 					case 1: if(environmentA.getKangarooA() != null)
 						{environmentA.setKangarooA(null);
 						environmentA.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 						
 						
 						break;
@@ -95,7 +102,12 @@ public class KZone
 					case 2: if(environmentA.getKangarooB() != null)
 						{environmentA.setKangarooB(null);
 						environmentA.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 
 						break;
@@ -103,49 +115,84 @@ public class KZone
 					case 3: if(environmentA.getKangarooC() != null)
 						{environmentA.setKangarooC(null);
 						environmentA.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 						break;
 
 					case 4: if(environmentB.getKangarooA() != null)
 						{environmentB.setKangarooA(null);
 						environmentB.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 								
 							break;
 
 					case 5: if(environmentB.getKangarooB() != null)
 						{environmentB.setKangarooB(null);
 						environmentB.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 							break;
 
 					case 6: if(environmentB.getKangarooC() != null)
 						{environmentB.setKangarooC(null);
 						environmentB.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 							break;
 
 					case 7: if(environmentC.getKangarooA() != null)
 						{environmentC.setKangarooA(null);
 						environmentC.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 							break;
 
 					case 8: if(environmentC.getKangarooB() != null)
 						{environmentC.setKangarooB(null);
 						environmentC.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 							break;
 
 					case 9: if(environmentC.getKangarooC() != null)
 						{environmentC.setKangarooC(null);
 						environmentC.updateEnvironment();
-						System.out.println("Deleated Kangaroo.");}
+						System.out.println("");
+						System.out.println("Deleated Kangaroo from original environment.");
+						System.out.println("");}
+						else {System.out.println("");
+						System.out.println("ERROR: Invalid selection.");
+						System.out.println("");}
 
 					
 							break;
@@ -222,7 +269,266 @@ public class KZone
 	   }
 
 
+
 	
+
+
+
+	public boolean checkForChange(int kangarooSw){
+		boolean goK = false;
+		switch (kangarooSw) {
+			case 1: if(environmentA.getKangarooA() != null){
+								environmentPosibilities4A();
+								goK = true;
+					}  
+			break;
+			case 2: if(environmentA.getKangarooB() != null){
+								environmentPosibilities4A();
+								goK = true;
+					} 
+			break;
+			case 3: if(environmentA.getKangarooC() != null){
+								environmentPosibilities4A();
+								goK = true;
+					}  
+			break;
+			case 4: if(environmentB.getKangarooA() != null){
+								environmentPosibilities4B();
+								goK = true;
+					}  
+			break;
+			case 5: if(environmentB.getKangarooB() != null){
+								environmentPosibilities4B();
+								goK = true;
+					}  
+			break;
+			case 6: if(environmentB.getKangarooC() != null){
+								environmentPosibilities4B();
+								goK = true;
+					}  
+			break;
+			case 7: if(environmentC.getKangarooA() != null){
+								environmentPosibilities4C();
+								goK = true;
+					} 
+			break;
+			case 8: if(environmentC.getKangarooB() != null){
+								environmentPosibilities4C();
+								goK = true;
+					}  
+			break;
+			case 9: if(environmentC.getKangarooC() != null){
+								environmentPosibilities4C();
+								goK = true;
+					}  
+			break;	
+		}
+		return goK;
+		
+	}
+
+
+
+	public void environmentPosibilities4A(){
+	System.out.println("");
+	System.out.println("Where do you wanna change it to?");
+	System.out.println("1. Second environment");
+	System.out.println("2. Third environment");
+	System.out.println("");
+
+
+	}
+
+
+	public void environmentPosibilities4B(){
+	System.out.println("");
+	System.out.println("Where do you wanna change it to?");
+	System.out.println("1. First environment");
+	System.out.println("2. Third environment");
+	System.out.println("");
+
+
+	}
+
+
+	public void environmentPosibilities4C(){
+	System.out.println("");
+	System.out.println("Where do you wanna change it to?");
+	System.out.println("1. First environment");
+	System.out.println("2. Second environment");
+	System.out.println("");
+
+
+	}
+
+
+	public void changeKangaroo(int userInput, int kangarooSw){
+		Kangaroo kChange = null;
+
+		switch (kangarooSw) {
+
+			case 1: kChange = environmentA.getKangarooA();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentB.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentC.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+
+			break;
+			case 2: kChange = environmentA.getKangarooB();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentB.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentC.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+
+			break;
+			case 3: kChange = environmentA.getKangarooC();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentB.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentC.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+
+			break;
+			case 4: kChange = environmentB.getKangarooA();
+
+					switch (userInput) {
+						case 1: 
+						
+						if (environmentA.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentC.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+			break;
+			case 5: kChange = environmentB.getKangarooB();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentA.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentC.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+			break;
+			case 6: kChange = environmentB.getKangarooC();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentA.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentC.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+			break;
+			case 7: kChange = environmentC.getKangarooA();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentA.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentB.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+			break;
+			case 8: kChange = environmentC.getKangarooB();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentA.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentB.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+			break;
+			case 9: kChange = environmentC.getKangarooC();
+
+					switch (userInput) {
+						case 1: 
+						if (environmentA.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+						case 2: 
+						if (environmentB.theChange(kChange)){
+						userInput = kangarooSw;
+						deleteKangaroo(userInput);}
+							break;
+					}
+
+			break;
+				
+			
+		}
+
+
+	}
+
+
+
+
+
+
+
+
 	 
 
 
