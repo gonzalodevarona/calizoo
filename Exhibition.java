@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 3 MARCH 2019
+ * @LAST UPDATE DATE: 4 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -155,21 +155,6 @@ public class Exhibition
 	}
 
 
-	
-	
-
-
-
-	/*public String placeKangarooGender(){
-		String message = "";
-		switch (zooKangaroos.checkSelectedEnvironmentGender(environment)) {
-			case true: message = "ERROR: The kangaroo can not be place in this environment because there is already one male.";
-			break;
-			case false:
-			break;
-		 } 
-		 return message;
-	} */
 
 
 	public void kangarooListWE(){
@@ -234,38 +219,33 @@ public class Exhibition
 
 	}
 
-	public void environmentPosibilities4A(){
-	System.out.println("");
-	System.out.println("Where do you wanna change it to?");
-	System.out.println("1. Second environment");
-	System.out.println("2. Third environment");
-	System.out.println("");
+
+	
+
+	public boolean executeCheck4Change(int kangarooSw) {
+
+		boolean goK = false;
+		goK = zooKangaroos.checkForChange(kangarooSw);
+		return goK;
+	}
+
+	
 
 
+	public void typeSelectionMssg() {	
+		System.out.println("--------------------------------------");
+		System.out.print("| Type the number of your selection: ");	
+	} 
+
+
+	public void plainLine(){
+		System.out.println("--------------------------------------");
 	}
 
 
-	public void environmentPosibilities4B(){
-	System.out.println("");
-	System.out.println("Where do you wanna change it to?");
-	System.out.println("1. First environment");
-	System.out.println("2. Third environment");
-	System.out.println("");
-
-
+	public void executeChange(int userInput, int kangarooSw){
+	zooKangaroos.changeKangaroo(userInput, kangarooSw);
 	}
-
-
-	public void environmentPosibilities4C(){
-	System.out.println("");
-	System.out.println("Where do you wanna change it to?");
-	System.out.println("1. First environment");
-	System.out.println("2. Second environment");
-	System.out.println("");
-
-
-	}
-
 
 
 
