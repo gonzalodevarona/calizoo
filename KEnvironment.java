@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 3 MARCH 2019
+ * @LAST UPDATE DATE: 4 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -271,9 +271,52 @@ public class KEnvironment{
 
 
 
+	public boolean theChange(Kangaroo kChange){
+		String reply =  "";
+		boolean workDone = false;
+
+		if (kangarooA == null || kangarooB == null || kangarooC == null) {
+			
+			if(kChange.getGender().equals(Kangaroo.MALE)) {
+				
+				if (oneMaleKangaroo()) {
+					reply += "ERROR: There is already one male kangaroo, for kangaroos safety there can not be 2 males in the same environment.";
+				} 
+			}	
 
 
- 
+		  	else if(kangarooA == null) {
+		  		workDone = true;
+				kangarooA = kChange;
+				updateEnvironment();
+				reply += "Kangaroo successfully changed from original environment";
+			}else if (kangarooB == null) {
+				workDone = true;
+				kangarooB = kChange;
+				updateEnvironment();
+				reply += "Kangaroo successfully changed from original environment";
+
+			}else if (kangarooC == null) {
+				workDone = true;
+				kangarooC = kChange;
+				updateEnvironment();
+				reply += "Kangaroo successfully changed from original environment";
+			}
+
+		} else {
+			reply += "This kangaroo can not be added to this environment because it is full.";
+		  }
+		
+		
+		  	System.out.println("");
+			System.out.println(reply);
+			System.out.println("");
+
+			return workDone;
+
+ 	}
+
+
 
 
 
