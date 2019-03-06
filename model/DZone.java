@@ -27,7 +27,7 @@ public class DZone
 //Methods
 
 	public DZone(double temperature, double food, BeardedDragon dragonA, BeardedDragon dragonB){
-	this.temperature = temperature;
+	this.temperature = 36;
 	this.food = food;
 	this.dragonA = dragonA;
 	this.dragonB = dragonB;
@@ -122,6 +122,19 @@ public class DZone
 		
 		return theList;
 
+	}
+
+
+
+	public String showDZoneInfo(){
+		String reply = "";
+
+			reply += "This is bearded dragons info: \n";
+			reply += "Temperature = "+temperature+"\n";
+ 			reply += "Food = "+food+"\n";
+ 			reply += "Water = "+water+"\n";
+
+		return reply;
 	}
 
 
