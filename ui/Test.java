@@ -92,7 +92,9 @@ public class  Test
 		System.out.println("5. Show kangaroos vaccination date");
 		System.out.println("6. Show kangaroos information.");
 		System.out.println("7. Show bearded dragons information.");
-		System.out.println("8. QUIT PROGRAM");
+		System.out.println("8. Show environments information.");
+		System.out.println("9. Show bearded dragons zone information.");
+		System.out.println("10. QUIT PROGRAM");
 		System.out.println("");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -136,7 +138,7 @@ public class  Test
 
 		
 
-		while (userInput != 8){
+		while (userInput != 10){
 
 			showMenuOptions();
 
@@ -318,8 +320,18 @@ public class  Test
 
 				break;
 
+				//SHOW ENVIRONMENTS INFO
+				case 8: System.out.println(startThisThing.getZooKangaroos().showEnvironmentsInfo());
+
+				break;
+
+				//SHOW DRAGON ZONE INFO
+				case 9: System.out.println(startThisThing.getZooDragons().showDZoneInfo());
+
+				break;
+
 				//QUIT PTOGRAM
-				case 8: System.out.print("\033[H\033[2J");  
+				case 10: System.out.print("\033[H\033[2J");  
     					System.out.flush(); 
 						System.out.println("");
 						System.out.println("THANK YOU FOR USING THE OUTBACK");
