@@ -488,6 +488,28 @@ public class KZone
 
 	}
 
+	public String showEnvironmentsInfo(){
+		String reply = "";
+
+			reply += "This is environment A's info: \n";
+			reply += environmentA.showEnvironment();
+			reply += "\n";
+
+
+
+			reply += "This is environment B's info: \n";
+			reply += environmentB.showEnvironment();
+			reply += "\n";
+
+
+
+			reply += "This is environment C's info: \n";
+			reply += environmentC.showEnvironment();
+
+
+		return reply;
+	}
+
 
 
 
