@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 4 MARCH 2019
+ * @LAST UPDATE DATE: 5 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -231,7 +231,7 @@ public class  Test
 
 						int environment = userInput;
 
-						startThisThing.executeCreate(theNew, environment);
+						System.out.println(startThisThing.executeCreate(theNew, environment));
 						System.out.println("");
 						System.out.println("");
 
@@ -243,7 +243,7 @@ public class  Test
 				case 2: System.out.println("");
 						System.out.println("Please select which kangaroo will be erased:");
 						System.out.println("");
-						startThisThing.kangarooList();
+						System.out.println(startThisThing.kangarooList());
 						System.out.println("");
 						typeSelectionMssg();
 						
@@ -252,31 +252,8 @@ public class  Test
 
 						plainLine();
 
-						switch (userInput) {
-							case 0: 
-								break;
-							case 1: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 2: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 3: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 4: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 5: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 6: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 7: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 8: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							case 9: startThisThing.getZooKangaroos().deleteKangaroo(userInput);
-								break;
-							default: 
-								break;
-						 	
-						 } 
+						System.out.println(startThisThing.getZooKangaroos().deleteKangaroo(userInput));
+							
 
 				break; 
 
@@ -284,7 +261,7 @@ public class  Test
 				System.out.println("");
 				System.out.println("Please select the kangaroo that you want to change its environment:");
 
-				startThisThing.kangarooListWE();
+				System.out.println(startThisThing.kangarooListWE());
 
 				System.out.println("");
 				typeSelectionMssg();
@@ -293,17 +270,27 @@ public class  Test
 				plainLine();
 				int kangarooSw = userInput; //KANGAROO 4 CHANGE
 
-				if (startThisThing.executeCheck4Change(kangarooSw) == true){
+				String trial = startThisThing.executeCheck4Change(kangarooSw);
+				if (trial.equals("")){
+					if(userInput != 0){
+					System.out.println("");
+					System.out.println("ERROR: Invalid kangaroo selection or change can not be done for kangaroos safety. ");
+					System.out.println("");}
+				
 
+				}
+				else{
+				System.out.println("");
+				System.out.println (trial);
+				System.out.println("");
 				typeSelectionMssg();
 				userInput = reader.nextInt(); //ENVIRONMENT 4 CHANGE
 				reader.nextLine();
 				plainLine();
-				startThisThing.executeChange(userInput, kangarooSw);
-
-
-				} else if (kangarooSw == 0) {}
-				else {System.out.println("ERROR: Invalid kangaroo selection or change can not be done for kangaroos safety. ");}
+				System.out.println("");
+				System.out.println (startThisThing.executeChange(userInput, kangarooSw));
+				System.out.println("");
+				}
 				
 
 

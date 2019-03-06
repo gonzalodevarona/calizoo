@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 4 MARCH 2019
+ * @LAST UPDATE DATE: 5 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -80,8 +80,8 @@ public class KZone
 	}
 	
 
-	public void deleteKangaroo(int userInput){
-			
+	public String deleteKangaroo(int userInput){
+			String reply = "";
 			
 			
 				switch (userInput){
@@ -89,12 +89,8 @@ public class KZone
 					case 1: if(environmentA.getKangarooA() != null)
 						{environmentA.setKangarooA(null);
 						environmentA.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 						
 						
 						break;
@@ -102,12 +98,8 @@ public class KZone
 					case 2: if(environmentA.getKangarooB() != null)
 						{environmentA.setKangarooB(null);
 						environmentA.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 
 						break;
@@ -115,90 +107,64 @@ public class KZone
 					case 3: if(environmentA.getKangarooC() != null)
 						{environmentA.setKangarooC(null);
 						environmentA.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 						break;
 
 					case 4: if(environmentB.getKangarooA() != null)
 						{environmentB.setKangarooA(null);
 						environmentB.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 								
 							break;
 
 					case 5: if(environmentB.getKangarooB() != null)
 						{environmentB.setKangarooB(null);
 						environmentB.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 							break;
 
 					case 6: if(environmentB.getKangarooC() != null)
 						{environmentB.setKangarooC(null);
 						environmentB.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 							break;
 
 					case 7: if(environmentC.getKangarooA() != null)
 						{environmentC.setKangarooA(null);
 						environmentC.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 							break;
 
 					case 8: if(environmentC.getKangarooB() != null)
 						{environmentC.setKangarooB(null);
 						environmentC.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 							break;
 
 					case 9: if(environmentC.getKangarooC() != null)
 						{environmentC.setKangarooC(null);
 						environmentC.updateEnvironment();
-						System.out.println("");
-						System.out.println("Deleated Kangaroo from original environment.");
-						System.out.println("");}
-						else {System.out.println("");
-						System.out.println("ERROR: Invalid selection.");
-						System.out.println("");}
+						reply += ("\nDeleated Kangaroo from original environment.\n");}
+						else {reply += ("\nERROR: Invalid selection.\n");}
 
 					
 							break;
 
 
 				}
+
+				return reply;
 			}
 
 	public String infoFromKZone(){
@@ -247,7 +213,7 @@ public class KZone
 
 
 
-	 public void createKangaroo(Kangaroo theNew , int environment) {
+	 public String createKangaroo(Kangaroo theNew , int environment) {
 		   
 		   String reply = "";
 
@@ -263,7 +229,7 @@ public class KZone
 		   		break;
 		   }
 		  
-		   System.out.println(reply);
+		   return reply;
 		   
 		  
 	   }
@@ -274,52 +240,45 @@ public class KZone
 
 
 
-	public boolean checkForChange(int kangarooSw){
-		boolean goK = false;
+	public String checkForChange(int kangarooSw){
+		String goK = "";
 		switch (kangarooSw) {
 			case 1: if(environmentA.getKangarooA() != null){
-								environmentPosibilities4A();
-								goK = true;
+							goK += environmentPosibilities4A();			
 					}  
 			break;
 			case 2: if(environmentA.getKangarooB() != null){
-								environmentPosibilities4A();
-								goK = true;
+							goK += environmentPosibilities4A();
 					} 
 			break;
 			case 3: if(environmentA.getKangarooC() != null){
-								environmentPosibilities4A();
-								goK = true;
+							goK += environmentPosibilities4A();
 					}  
 			break;
 			case 4: if(environmentB.getKangarooA() != null){
-								environmentPosibilities4B();
-								goK = true;
+							goK += environmentPosibilities4B();
 					}  
 			break;
 			case 5: if(environmentB.getKangarooB() != null){
-								environmentPosibilities4B();
-								goK = true;
+							goK += environmentPosibilities4B();
+
 					}  
 			break;
 			case 6: if(environmentB.getKangarooC() != null){
-								environmentPosibilities4B();
-								goK = true;
+							goK += environmentPosibilities4B();
 					}  
 			break;
 			case 7: if(environmentC.getKangarooA() != null){
-								environmentPosibilities4C();
-								goK = true;
+							goK += environmentPosibilities4C();
 					} 
 			break;
 			case 8: if(environmentC.getKangarooB() != null){
-								environmentPosibilities4C();
-								goK = true;
+							goK += environmentPosibilities4C();
 					}  
 			break;
 			case 9: if(environmentC.getKangarooC() != null){
-								environmentPosibilities4C();
-								goK = true;
+							goK += environmentPosibilities4C();
+
 					}  
 			break;	
 		}
@@ -329,40 +288,44 @@ public class KZone
 
 
 
-	public void environmentPosibilities4A(){
-	System.out.println("");
-	System.out.println("Where do you wanna change it to?");
-	System.out.println("1. Second environment");
-	System.out.println("2. Third environment");
-	System.out.println("");
+	public String environmentPosibilities4A(){
+	String reply = "";
+	reply += "\nWhere do you wanna change it to?\n";
+	reply += "1. Second environment\n";
+	reply += "2. Third environment\n";
+	return reply;
 
 
 	}
 
 
-	public void environmentPosibilities4B(){
-	System.out.println("");
-	System.out.println("Where do you wanna change it to?");
-	System.out.println("1. First environment");
-	System.out.println("2. Third environment");
-	System.out.println("");
+	public String environmentPosibilities4B(){
+	String reply = "";
+	reply += "\nWhere do you wanna change it to?\n";
+	reply += "1. First environment\n";
+	reply += "2. Third environment\n";
+	return reply;
 
 
 	}
 
 
-	public void environmentPosibilities4C(){
-	System.out.println("");
-	System.out.println("Where do you wanna change it to?");
-	System.out.println("1. First environment");
-	System.out.println("2. Second environment");
-	System.out.println("");
+	public String environmentPosibilities4C(){
+		String reply = "";
+	
+	reply += "\nWhere do you wanna change it to?\n";
+	reply += "1. First environment\n";
+	reply += "2. Second environment\n";
+	
+
+	return reply;
 
 
 	}
 
 
-	public void changeKangaroo(int userInput, int kangarooSw){
+	public String changeKangaroo(int userInput, int kangarooSw){
+		String reply = "";
 		Kangaroo kChange = null;
 
 		switch (kangarooSw) {
@@ -370,13 +333,14 @@ public class KZone
 			case 1: kChange = environmentA.getKangarooA();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentB.theChange(kChange)){
+						case 1: reply += environmentB.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
+
 							break;
-						case 2: 
-						if (environmentC.theChange(kChange)){
+						case 2: reply += environmentC.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -387,13 +351,13 @@ public class KZone
 			case 2: kChange = environmentA.getKangarooB();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentB.theChange(kChange)){
+						case 1: reply += environmentB.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentC.theChange(kChange)){
+						case 2: reply += environmentC.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -404,13 +368,13 @@ public class KZone
 			case 3: kChange = environmentA.getKangarooC();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentB.theChange(kChange)){
+						case 1: reply += environmentB.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentC.theChange(kChange)){
+						case 2: reply += environmentC.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -422,13 +386,13 @@ public class KZone
 
 					switch (userInput) {
 						case 1: 
-						
-						if (environmentA.theChange(kChange)){
+						reply += environmentA.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentC.theChange(kChange)){
+						case 2: reply += environmentC.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -438,13 +402,13 @@ public class KZone
 			case 5: kChange = environmentB.getKangarooB();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentA.theChange(kChange)){
+						case 1: reply += environmentA.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentC.theChange(kChange)){
+						case 2: reply += environmentC.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -454,13 +418,13 @@ public class KZone
 			case 6: kChange = environmentB.getKangarooC();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentA.theChange(kChange)){
+						case 1: reply += environmentA.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentC.theChange(kChange)){
+						case 2: reply += environmentC.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -470,13 +434,13 @@ public class KZone
 			case 7: kChange = environmentC.getKangarooA();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentA.theChange(kChange)){
+						case 1: reply += environmentA.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentB.theChange(kChange)){
+						case 2: reply += environmentB.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -486,13 +450,13 @@ public class KZone
 			case 8: kChange = environmentC.getKangarooB();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentA.theChange(kChange)){
+						case 1: reply += environmentA.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentB.theChange(kChange)){
+						case 2: reply += environmentB.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -502,13 +466,13 @@ public class KZone
 			case 9: kChange = environmentC.getKangarooC();
 
 					switch (userInput) {
-						case 1: 
-						if (environmentA.theChange(kChange)){
+						case 1: reply += environmentA.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
-						case 2: 
-						if (environmentB.theChange(kChange)){
+						case 2: reply += environmentB.theChange(kChange);
+						if (reply.equals("Kangaroo successfully changed from original environment")){
 						userInput = kangarooSw;
 						deleteKangaroo(userInput);}
 							break;
@@ -518,6 +482,8 @@ public class KZone
 				
 			
 		}
+
+		return reply;
 
 
 	}

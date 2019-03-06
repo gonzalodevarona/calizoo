@@ -5,7 +5,7 @@
  * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN I
  * LAB FOR CALI ZOO CODE
  * @AUTHOR: GONZALO DE VARONA <gonzalo.de1@correo.icesi.edu.co>
- * @LAST UPDATE DATE: 4 MARCH 2019
+ * @LAST UPDATE DATE: 5 MARCH 2019
  * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
  */
 
@@ -249,7 +249,7 @@ public class KEnvironment{
 			
 			
 		}else {
-			reply += "This kangaroo can not be added to this environment because it is full.";
+			reply += "\nThis kangaroo can not be added to this environment because it is full.\n";
 		}
 		
 		return reply;
@@ -271,9 +271,9 @@ public class KEnvironment{
 
 
 
-	public boolean theChange(Kangaroo kChange){
+	public String theChange(Kangaroo kChange){
 		String reply =  "";
-		boolean workDone = false;
+		
 
 		if (kangarooA == null || kangarooB == null || kangarooC == null) {
 			
@@ -286,18 +286,18 @@ public class KEnvironment{
 
 
 		  	else if(kangarooA == null) {
-		  		workDone = true;
+		  		
 				kangarooA = kChange;
 				updateEnvironment();
 				reply += "Kangaroo successfully changed from original environment";
 			}else if (kangarooB == null) {
-				workDone = true;
+				
 				kangarooB = kChange;
 				updateEnvironment();
 				reply += "Kangaroo successfully changed from original environment";
 
 			}else if (kangarooC == null) {
-				workDone = true;
+				
 				kangarooC = kChange;
 				updateEnvironment();
 				reply += "Kangaroo successfully changed from original environment";
@@ -308,11 +308,9 @@ public class KEnvironment{
 		  }
 		
 		
-		  	System.out.println("");
-			System.out.println(reply);
-			System.out.println("");
+		  	
 
-			return workDone;
+			return reply;
 
  	}
 
