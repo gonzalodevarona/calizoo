@@ -314,6 +314,16 @@ public class KEnvironment{
 
  	}
 
+ 	public String showEnvironment(){
+
+ 		String reply = "";
+ 			reply += "Area = "+area+"\n";
+ 			reply += "Food = "+food+"\n";
+ 			reply += "Water = "+water+"\n";
+
+ 		return reply; 
+ 	}
+
 
 
 
